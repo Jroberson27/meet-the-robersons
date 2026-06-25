@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Ultimate Guide to Universal Orlando with Kids | Meet The Robersons</title>
+  <meta name="description" content="An Orlando family of 8 shares everything you need to know before your first Universal Orlando Resort trip with kids. Crowd tips, must-do rides, food picks, and what to skip." />
+  <meta name="keywords" content="Universal Orlando with kids, Universal Studios Orlando family guide, Epic Universe tips, Islands of Adventure family, Universal Orlando tips, Orlando family travel" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    @font-face { font-family: 'Solenza'; src: url('Solenza-Regular.otf') format('opentype'); font-weight: 400; }
+    @font-face { font-family: 'Solenza'; src: url('Solenza-Outline.otf') format('opentype'); font-weight: 300; }
+    :root {
+      --pink: #ec709a; --yellow: #ffe497; --blue: #63c3ef;
+      --dark: #231f20; --off-white: #efeee8;
+      --text: #222222; --muted: #777777; --radius: 16px;
+      --font-brand: 'Solenza', 'Nunito', sans-serif;
+      --font-body: 'Nunito Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--off-white); color: var(--text); overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 18px 40px; display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,0.96); backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+    .nav-logo { font-family: var(--font-brand); font-size: 1.4rem; letter-spacing: 0.5px; display: flex; align-items: center; gap: 4px; }
+    .nav-logo span:nth-child(1) { color: var(--pink); }
+    .nav-logo span:nth-child(2) { color: var(--yellow); }
+    .nav-logo span:nth-child(3) { color: var(--blue); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-weight: 700; font-size: 0.9rem; letter-spacing: 0.5px; text-transform: uppercase; color: var(--text); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { background: var(--pink); color: white !important; padding: 10px 22px; border-radius: 50px; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { width: 26px; height: 2px; background: var(--text); border-radius: 2px; }
+
+    .blog-hero { margin-top: 70px; position: relative; height: 480px; overflow: hidden; }
+    .blog-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+    .blog-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(35,31,32,0.3) 0%, rgba(35,31,32,0.78) 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+      padding: 48px 24px; text-align: center;
+    }
+    .blog-hero-category { font-size: 0.75rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--pink); margin-bottom: 12px; }
+    .blog-hero-title { font-family: var(--font-brand); font-size: clamp(1.8rem, 4vw, 3rem); color: white; line-height: 1.15; max-width: 800px; margin-bottom: 16px; }
+    .blog-hero-meta { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+
+    .blog-container { max-width: 780px; margin: 0 auto; padding: 64px 24px 80px; }
+    .blog-intro { font-size: 1.15rem; line-height: 1.85; color: #444; margin-bottom: 40px; font-weight: 600; border-left: 4px solid var(--pink); padding-left: 20px; }
+    .blog-body h2 { font-family: var(--font-brand); font-size: 1.8rem; color: var(--dark); margin: 48px 0 16px; line-height: 1.2; }
+    .blog-body h3 { font-family: var(--font-body); font-weight: 800; font-size: 1.15rem; color: var(--dark); margin: 32px 0 12px; }
+    .blog-body p { font-size: 1.05rem; line-height: 1.85; color: #444; margin-bottom: 20px; }
+    .blog-body ul { padding-left: 24px; margin-bottom: 20px; }
+    .blog-body li { font-size: 1.05rem; line-height: 1.8; color: #444; margin-bottom: 10px; }
+    .blog-body strong { color: var(--dark); font-weight: 800; }
+    .tip-box { background: linear-gradient(135deg, #fde8f3, #e1f4fc); border-radius: var(--radius); padding: 24px 28px; margin: 32px 0; border-left: 4px solid var(--pink); }
+    .tip-box .tip-label { font-size: 0.75rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--pink); margin-bottom: 8px; }
+    .tip-box p { margin: 0; font-size: 1rem; color: #444; line-height: 1.7; }
+    .section-divider { width: 60px; height: 4px; background: var(--pink); border-radius: 2px; margin: 48px 0; }
+    .blog-cta { background: var(--dark); border-radius: 20px; padding: 40px; text-align: center; margin-top: 64px; }
+    .blog-cta h3 { font-family: var(--font-brand); color: white; font-size: 1.6rem; margin-bottom: 12px; }
+    .blog-cta p { color: rgba(255,255,255,0.6); margin-bottom: 24px; font-size: 0.95rem; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: 50px; font-family: var(--font-body); font-weight: 800; font-size: 0.95rem; cursor: pointer; border: none; transition: transform 0.2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--pink); color: white; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 0.9rem; font-weight: 700; margin-bottom: 40px; transition: color 0.2s; }
+    .back-link:hover { color: var(--pink); }
+
+    footer { background: #0a0a0a; color: white; padding: 48px 40px 24px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 24px; }
+    .footer-logo { font-family: var(--font-brand); font-size: 1.4rem; display: flex; gap: 4px; }
+    .footer-logo span:nth-child(1) { color: var(--pink); }
+    .footer-logo span:nth-child(2) { color: var(--yellow); }
+    .footer-logo span:nth-child(3) { color: var(--blue); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; font-size: 0.85rem; color: rgba(255,255,255,0.3); text-align: center; }
+
+    @media (max-width: 768px) {
+      nav { padding: 14px 16px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .blog-hero { height: 360px; }
+      .blog-hero-title { font-size: 1.6rem; }
+      .blog-container { padding: 40px 16px 60px; }
+      .blog-body h2 { font-size: 1.5rem; }
+      footer { padding: 40px 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span>MEET</span>&nbsp;<span>THE</span>&nbsp;<span>ROBERSONS</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#videos">Videos</a></li>
+      <li><a href="index.html#blog">Blog</a></li>
+      <li><a href="index.html#partnerships">Partnerships</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Work With Us</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="blog-hero">
+    <img src="epic-night.jpg" alt="Universal Orlando Epic Universe lit up at night" />
+    <div class="blog-hero-overlay">
+      <div class="blog-hero-category">Theme Parks</div>
+      <h1 class="blog-hero-title">The Ultimate Guide to Universal Orlando with Kids: Everything We Wish We Knew Before Our First Trip</h1>
+      <div class="blog-hero-meta">June 20, 2026 &nbsp;&middot;&nbsp; 8 min read &nbsp;&middot;&nbsp; By Jordan & Ashly Roberson</div>
+    </div>
+  </div>
+
+  <div class="blog-container">
+    <a href="index.html#blog" class="back-link">&#8592; Back to Blog</a>
+
+    <p class="blog-intro">We are an Orlando family of 8 who visits Universal Orlando Resort multiple times a month. We have done every ride, eaten at every restaurant, and made every mistake so you do not have to. Here is everything we wish someone had told us before our very first trip.</p>
+
+    <div class="blog-body">
+
+      <h2>Why Universal Orlando Hits Different with Kids</h2>
+      <p>Okay real talk. Disney World gets all the hype when people think about Orlando theme parks. And listen, we love Disney. But Universal Orlando Resort has quietly become one of the most fun, most immersive, and most underrated places you can take your whole family. And now that Epic Universe is open? The conversation has completely changed.</p>
+      <p>We literally live minutes from these parks. That means we have been there hundreds of times, in every season, at every crowd level, with kids ranging from toddlers all the way to teenagers. We know what is worth your time and what will just stress you out. So let us save you some trouble.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>First Things First: What Parks Are We Talking About?</h2>
+      <p>Universal Orlando Resort now has four theme parks and they are all genuinely worth your time:</p>
+      <ul>
+        <li><strong>Universal Studios Florida</strong> is the original park. Great for older kids and teens. Springfield, Hollywood, and the incredible Wizarding World of Harry Potter are all here.</li>
+        <li><strong>Islands of Adventure</strong> is loaded with great rides and action at every turn. Home to Jurassic World, Marvel Super Hero Island, and the other half of the Wizarding World.</li>
+        <li><strong>Epic Universe</strong> opened in 2025 and honestly changed everything. Super Nintendo World, How to Train Your Dragon, Harry Potter at the Ministry of Magic and more. This park alone is worth flying to Orlando for.</li>
+        <li><strong>Volcano Bay</strong> is Universal's water park and an absolute must if you visit in the summer. The kids go completely wild.</li>
+      </ul>
+
+      <div class="tip-box">
+        <div class="tip-label">Roberson Family Tip</div>
+        <p>If you have 3 days, give a full day to Epic Universe, a full day to Islands of Adventure, and split your third day between Universal Studios Florida and Volcano Bay. That is the move. Trust us on this one.</p>
+      </div>
+
+      <h3>How Many Days Do You Actually Need?</h3>
+      <p>With kids, plan for at least 3 to 4 days if you want to hit all three theme parks without feeling rushed. Epic Universe alone deserves a full day. If you are only doing Universal Studios Florida and Islands of Adventure, two days is comfortable. One day is technically possible but you will spend the whole drive home talking about everything you missed. We have been there.</p>
+
+      <h3>The Best Time to Visit Universal Orlando</h3>
+      <p>We go year round so we have real data on this. The quietest stretches are late January through early February, the weeks right after Thanksgiving, and early September after Labor Day. The times to avoid are spring break from mid March through mid April, summer weekends, and the holiday stretch from Christmas through New Year's.</p>
+      <p>If your kids are in school, the absolute sweet spot is a Tuesday through Thursday visit in late January or early February. Crowds are low, waits are short, and Orlando weather is genuinely perfect around 70 degrees. It feels like a cheat code.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>Epic Universe: What Every Family Needs to Know</h2>
+      <p>Epic Universe opened in May 2025 and it is unlike anything we have experienced at a theme park before. The theming is next level, the rides are incredible, and every single world inside the park feels like stepping into another dimension. Universal raised the bar for the entire industry with this one.</p>
+
+      <h3>The Worlds Inside Epic Universe</h3>
+      <ul>
+        <li><strong>The Wizarding World of Harry Potter: Ministry of Magic</strong> places you inside a 1920s Paris setting with insane attention to detail. The main attraction puts you inside the films in a way that will genuinely give you chills.</li>
+        <li><strong>Super Nintendo World</strong> is built for families with younger kids and it is SO much fun. Interactive wristbands let your children collect coins throughout the whole land. Mario Kart: Bowser's Challenge is an absolute must and your kids will be talking about it for weeks.</li>
+        <li><strong>How to Train Your Dragon: Isle of Berk</strong> is beautiful, emotional, and great for all ages. The flying coaster is smooth and perfect for younger riders who might not be ready for the bigger stuff yet.</li>
+        <li><strong>Dark Universe</strong> is the gothic spooky zone. Older kids and teens will absolutely love it. Probably not the vibe for little ones though.</li>
+        <li><strong>Celestial Park</strong> is the gorgeous central hub of the whole park. Great food, stunning architecture, and the Starfall Racers coaster for anyone chasing a serious thrill.</li>
+      </ul>
+
+      <div class="tip-box">
+        <div class="tip-label">Roberson Family Tip</div>
+        <p>Head straight to Super Nintendo World when the park opens. The interactive wristband experience is the highlight for young kids and the lines build up fast. We always start here and then move to How to Train Your Dragon mid morning when things are still a little calmer.</p>
+      </div>
+
+      <h3>Height Requirements to Know Before You Go</h3>
+      <p>Epic Universe has a great range of attractions for younger kids. Many of the best experiences in Super Nintendo World and How to Train Your Dragon work for kids 40 inches and under. Mario Kart requires 40 inches. The flying coaster is 39 inches. The big coaster Starfall Racers requires 48 inches. Plan your day around your shortest family member first and everything else will fall into place.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>Food Worth Actually Spending Money On</h2>
+      <p>Universal's food has gotten genuinely great over the last few years. Here are our family's honest picks after hundreds of meals across the whole resort.</p>
+
+      <h3>Best Quick Service Options</h3>
+      <ul>
+        <li><strong>Three Broomsticks at Islands of Adventure</strong> is a Roberson family staple. The Great Feast platter is built for large groups and the Butterbeer hits every single time. Get there before noon.</li>
+        <li><strong>The Leaky Cauldron at Universal Studios Florida</strong> has more Harry Potter food done right. The Fisherman's Pie is underrated and the pasties are perfect for little hands on the go.</li>
+        <li><strong>Toadstool Cafe at Epic Universe</strong> is the newest addition and already a family favorite. The mushroom theming makes the kids feel like they are actually inside the video game. They lose it every time.</li>
+      </ul>
+
+      <h3>Best Sit Down Dining</h3>
+      <p>Mythos Restaurant at Islands of Adventure consistently wins awards as one of the best theme park restaurants in the world. We are not exaggerating. Book it in advance. The food is legitimately great and the setting inside a carved cave overlooking the Lost Continent is stunning. We take every visiting family member there. No exceptions.</p>
+
+      <div class="tip-box">
+        <div class="tip-label">Roberson Family Tip</div>
+        <p>Get the frozen Butterbeer. Do it early before the line wraps around the building. Every single one of our six kids has a strong opinion on frozen versus regular and we will never all agree. That is just family life in the Roberson house.</p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2>Staying On Site vs. Off Site</h2>
+      <p>Universal's on site hotels come with a big perk: Early Park Admission. Guests at Premier hotels like Portofino Bay, Hard Rock, and Royal Pacific get one hour of early entry every single day. At a park like Epic Universe where the best rides fill up fast, that one hour is the difference between a 15 minute wait and a 90 minute wait for Mario Kart.</p>
+      <p>For families on a tighter budget, staying off site on International Drive still gives you easy access. We have done both. Our honest take is that if you can stretch for even one night at Cabana Bay Beach Resort (the most affordable on site option), the early entry benefit alone pays for itself in time saved. It is genuinely that significant.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>What to Skip (Or at Least Not Stress About)</h2>
+      <p>As locals who visit constantly, we know what is worth your limited park time and what is not. Skip the character meet and greets if your kids are older than 6. The lines eat into ride time and the payoff is a quick photo. Skip Shrek 4D. If the app shows 40 minutes, assume 60. Know your family's energy limits and build in actual breaks. Every single meltdown we have witnessed in a theme park happened because someone skipped lunch or pushed past the point of no return. We very much include ourselves in that.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>Final Thoughts from Your Orlando Neighbors</h2>
+      <p>Universal Orlando gives back exactly what you put into it. The more you know going in, the better your experience. Plan around your youngest child's height. Arrive at rope drop. Get your Butterbeer before noon. Take breaks. Eat at Mythos. And if you have not been to Epic Universe yet, make it the absolute centerpiece of your whole trip.</p>
+      <p>We have been to these parks more times than we can count and we still find new things to love on every single visit. That is the magic of Universal Orlando with kids. It does not get old. It only gets better.</p>
+
+      <div class="blog-cta">
+        <h3>Want more tips like this?</h3>
+        <p>We drop Universal Orlando guides, Epic Universe updates, and family travel content every week on YouTube. Come join the family.</p>
+        <a href="https://www.youtube.com/@TheRobersonsTravel" target="_blank" class="btn btn-primary">Subscribe on YouTube &#8594;</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span>MEET</span>&nbsp;<span>THE</span>&nbsp;<span>ROBERSONS</span>
+      </div>
+      <span style="color:rgba(255,255,255,0.3); font-size:0.85rem;">Theme Parks. Travel. FUN.</span>
+    </div>
+    <div class="footer-bottom">&#169; 2026 Meet The Robersons. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why We Document Everything (And Why You Should Too) | Meet The Robersons</title>
+  <meta name="description" content="The Roberson family shares why they started documenting every family trip, what it has meant for their kids, and why capturing your family story matters more than you think." />
+  <meta name="keywords" content="family content creator, documenting family travel, family YouTube channel, family vlog tips, why document family memories, family storytelling" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    @font-face { font-family: 'Solenza'; src: url('Solenza-Regular.otf') format('opentype'); font-weight: 400; }
+    @font-face { font-family: 'Solenza'; src: url('Solenza-Outline.otf') format('opentype'); font-weight: 300; }
+    :root {
+      --pink: #ec709a; --yellow: #ffe497; --blue: #63c3ef;
+      --dark: #231f20; --off-white: #efeee8;
+      --text: #222222; --muted: #777777; --radius: 16px;
+      --font-brand: 'Solenza', 'Nunito', sans-serif;
+      --font-body: 'Nunito Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--off-white); color: var(--text); overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 18px 40px; display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,0.96); backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+    .nav-logo { font-family: var(--font-brand); font-size: 1.4rem; letter-spacing: 0.5px; display: flex; align-items: center; gap: 4px; }
+    .nav-logo span:nth-child(1) { color: var(--pink); }
+    .nav-logo span:nth-child(2) { color: var(--yellow); }
+    .nav-logo span:nth-child(3) { color: var(--blue); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-weight: 700; font-size: 0.9rem; letter-spacing: 0.5px; text-transform: uppercase; color: var(--text); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { background: var(--pink); color: white !important; padding: 10px 22px; border-radius: 50px; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { width: 26px; height: 2px; background: var(--text); border-radius: 2px; }
+
+    .blog-hero { margin-top: 70px; position: relative; height: 480px; overflow: hidden; }
+    .blog-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+    .blog-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(35,31,32,0.3) 0%, rgba(35,31,32,0.78) 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+      padding: 48px 24px; text-align: center;
+    }
+    .blog-hero-category { font-size: 0.75rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+    .blog-hero-title { font-family: var(--font-brand); font-size: clamp(1.8rem, 4vw, 3rem); color: white; line-height: 1.15; max-width: 800px; margin-bottom: 16px; }
+    .blog-hero-meta { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+
+    .blog-container { max-width: 780px; margin: 0 auto; padding: 64px 24px 80px; }
+    .blog-intro { font-size: 1.15rem; line-height: 1.85; color: #444; margin-bottom: 40px; font-weight: 600; border-left: 4px solid var(--blue); padding-left: 20px; }
+    .blog-body h2 { font-family: var(--font-brand); font-size: 1.8rem; color: var(--dark); margin: 48px 0 16px; line-height: 1.2; }
+    .blog-body h3 { font-family: var(--font-body); font-weight: 800; font-size: 1.15rem; color: var(--dark); margin: 32px 0 12px; }
+    .blog-body p { font-size: 1.05rem; line-height: 1.85; color: #444; margin-bottom: 20px; }
+    .blog-body ul { padding-left: 24px; margin-bottom: 20px; }
+    .blog-body li { font-size: 1.05rem; line-height: 1.8; color: #444; margin-bottom: 10px; }
+    .blog-body strong { color: var(--dark); font-weight: 800; }
+    .tip-box { background: linear-gradient(135deg, #e1f4fc, #fde8f3); border-radius: var(--radius); padding: 24px 28px; margin: 32px 0; border-left: 4px solid var(--blue); }
+    .tip-box .tip-label { font-size: 0.75rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #1a8cb8; margin-bottom: 8px; }
+    .tip-box p { margin: 0; font-size: 1rem; color: #444; line-height: 1.7; }
+    .quote-block { background: var(--dark); border-radius: var(--radius); padding: 32px 36px; margin: 40px 0; }
+    .quote-block p { font-family: var(--font-brand); font-size: 1.4rem; color: white; line-height: 1.4; margin: 0; }
+    .quote-block span { display: block; font-family: var(--font-body); font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-top: 12px; font-weight: 700; }
+    .section-divider { width: 60px; height: 4px; background: var(--blue); border-radius: 2px; margin: 48px 0; }
+    .blog-cta { background: var(--dark); border-radius: 20px; padding: 40px; text-align: center; margin-top: 64px; }
+    .blog-cta h3 { font-family: var(--font-brand); color: white; font-size: 1.6rem; margin-bottom: 12px; }
+    .blog-cta p { color: rgba(255,255,255,0.6); margin-bottom: 24px; font-size: 0.95rem; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: 50px; font-family: var(--font-body); font-weight: 800; font-size: 0.95rem; cursor: pointer; border: none; transition: transform 0.2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--pink); color: white; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 0.9rem; font-weight: 700; margin-bottom: 40px; transition: color 0.2s; }
+    .back-link:hover { color: var(--pink); }
+
+    footer { background: #0a0a0a; color: white; padding: 48px 40px 24px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 24px; }
+    .footer-logo { font-family: var(--font-brand); font-size: 1.4rem; display: flex; gap: 4px; }
+    .footer-logo span:nth-child(1) { color: var(--pink); }
+    .footer-logo span:nth-child(2) { color: var(--yellow); }
+    .footer-logo span:nth-child(3) { color: var(--blue); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; font-size: 0.85rem; color: rgba(255,255,255,0.3); text-align: center; }
+
+    @media (max-width: 768px) {
+      nav { padding: 14px 16px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .blog-hero { height: 360px; }
+      .blog-hero-title { font-size: 1.6rem; }
+      .blog-container { padding: 40px 16px 60px; }
+      .blog-body h2 { font-size: 1.5rem; }
+      .quote-block { padding: 24px; }
+      .quote-block p { font-size: 1.2rem; }
+      footer { padding: 40px 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span>MEET</span>&nbsp;<span>THE</span>&nbsp;<span>ROBERSONS</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#videos">Videos</a></li>
+      <li><a href="index.html#blog">Blog</a></li>
+      <li><a href="index.html#partnerships">Partnerships</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Work With Us</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="blog-hero">
+    <img src="kid-birthday.jpg" alt="Roberson family celebrating a birthday together" />
+    <div class="blog-hero-overlay">
+      <div class="blog-hero-category">Our Story</div>
+      <h1 class="blog-hero-title">Why We Document Everything (And Why You Should Too)</h1>
+      <div class="blog-hero-meta">June 10, 2026 &nbsp;&middot;&nbsp; 6 min read &nbsp;&middot;&nbsp; By Jordan & Ashly Roberson</div>
+    </div>
+  </div>
+
+  <div class="blog-container">
+    <a href="index.html#blog" class="back-link">&#8592; Back to Blog</a>
+
+    <p class="blog-intro">When we first started filming our family trips, it honestly felt a little awkward. Who wants a camera in their face at 7am waiting for a theme park to open? But two years and 99 videos later, the camera has become the best thing we ever added to our family adventures. Here is why we will never stop.</p>
+
+    <div class="blog-body">
+
+      <h2>It Started as Something Small</h2>
+      <p>We did not launch a YouTube channel with some big master plan. Jordan picked up a camera one morning before a trip to Universal Orlando and just started filming. The kids were acting exactly the way kids act. Chaotic, hilarious, full of way too much energy before 8am. And when we watched the footage back that night at the hotel, something clicked.</p>
+      <p>That 20 minutes of footage captured something no photo could. The jokes that only make sense in our family. The inside references. The way our youngest squealed when she saw the Hogwarts castle for the first time. The way our teenagers pretended to be too cool and then absolutely lost it on the roller coaster. It was a real snapshot of who we actually are as a family, not a posed highlight reel.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>The Memory Problem Is Real</h2>
+      <p>Here is something nobody talks about enough: memory is unreliable. Even the best moments fade faster than you think. You will swear you will never forget the look on your kid's face at a certain moment. And then a few years go by and the details start to blur. The feeling stays. The specifics go.</p>
+      <p>Video changes that. When we look back at footage from two years ago, it is like stepping back into those exact moments. We remember conversations we would have completely forgotten. We see how little the kids were. We notice things we missed in real time because we were focused on logistics or keeping everyone together.</p>
+
+      <div class="quote-block">
+        <p>"Our kids are going to have a library of their childhood that they can revisit forever. That is something we are genuinely proud of."</p>
+        <span>Jordan Roberson</span>
+      </div>
+
+      <h2>It Has Changed How We Show Up on Trips</h2>
+      <p>This one surprised us. We assumed that having a camera around would make trips feel more performative or stressful. The opposite happened. When you know you are documenting something, you naturally pay more attention. You notice the little moments more. You are more present because you are actively looking for things worth capturing.</p>
+      <p>Our kids have gotten in on it too. They remind us to film things. They get excited about the recap videos. Our oldest has started thinking about storytelling in a way that genuinely impresses us. Documenting has made the whole family more engaged with the experiences we are having, not less.</p>
+
+      <div class="tip-box">
+        <div class="tip-label">If You Are Just Starting Out</div>
+        <p>You do not need fancy equipment to start. A phone on a small stabilizer tripod is how we started and honestly it is still most of what we use. The best camera is the one you actually have with you and are willing to pull out. Start there and build from it.</p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2>The Community We Never Expected</h2>
+      <p>When we posted our first videos, we genuinely had no idea if anyone would watch them. We were just a family in Orlando going to theme parks with six kids. Not exactly a novel concept.</p>
+      <p>But something about the realness of it connected with people. Parents who were planning their first Universal trip. Families who saw a reflection of their own chaos in ours. People who just wanted to watch something joyful for a few minutes. The community that formed around our channel has been one of the most genuinely unexpected gifts of this whole journey.</p>
+      <p>We hear from families all the time who say our videos helped them plan their trip. Or that watching us gave them the confidence to take their own big family to a theme park for the first time. Or just that seeing our crew made them smile on a hard day. That feedback is not something we expected when Jordan picked up a camera before a Universal trip. But it is something we take seriously now.</p>
+
+      <h3>Your Story Is Worth Telling</h3>
+      <p>We talk to a lot of families who have thought about documenting but talked themselves out of it. They assume their family is too ordinary. That nobody wants to watch a normal family going on normal trips. We used to feel the same way.</p>
+      <p>But here is what we know now: people do not watch family content looking for perfection. They are looking for connection. For authenticity. For proof that other families are figuring it out in real time just like they are. Your ordinary is someone else's inspiration. Your chaotic morning at the theme park gates might be exactly what some family needs to see before they decide to finally book their trip.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>Beyond the Videos: Why the Record Matters</h2>
+      <p>We think about this a lot. Our six kids are growing up fast. Every single one of them is in a phase that will never come back. The toddler stage. The age when they are obsessed with a specific character. The age when they are trying to act like teenagers but still cannot fully hide how excited they are about a new ride.</p>
+      <p>We are building a record of this family at every stage. Not a curated, perfect version of us. The real version. Tired and excited and silly and sometimes frustrated and always, always loving each other through it. That record is going to matter enormously someday. For our kids. For their kids. For us.</p>
+      <p>That is why we document everything. Not for views. Not for brand deals. Because this family is worth remembering in full detail and we want to be the ones doing the remembering.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>Where to Start If You Want to Do the Same</h2>
+      <p>Pick up whatever camera you have. Film one trip. Do not worry about editing or lighting or whether the footage is perfect. Just get the moments. Watch it back with your family that night and notice what happens to the room. We promise that will tell you everything you need to know about whether to keep going.</p>
+      <p>And if you want a shortcut, just watch what we do. Not because our way is the only way. But because we have figured out a lot through trial and error and there is no reason you have to make the same mistakes we did. That is what this whole channel is built on. Sharing what we know so your family can have the best possible version of these experiences.</p>
+
+      <div class="blog-cta">
+        <h3>Come watch us do it live</h3>
+        <p>99 videos, 8 family members, and zero plans to stop any time soon. Subscribe and come along for the ride.</p>
+        <a href="https://www.youtube.com/@TheRobersonsTravel" target="_blank" class="btn btn-primary">Subscribe on YouTube &#8594;</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span>MEET</span>&nbsp;<span>THE</span>&nbsp;<span>ROBERSONS</span>
+      </div>
+      <span style="color:rgba(255,255,255,0.3); font-size:0.85rem;">Theme Parks. Travel. FUN.</span>
+    </div>
+    <div class="footer-bottom">&#169; 2026 Meet The Robersons. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>

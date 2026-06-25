@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How We Budget Family Travel Without Sacrificing the Experience | Meet The Robersons</title>
+  <meta name="description" content="A family of 8 shares their real strategy for budgeting Universal Orlando and Disney World trips without cutting corners on the fun. Practical tips from Orlando locals." />
+  <meta name="keywords" content="family travel budget, Universal Orlando budget tips, Disney World family budget, theme park tips family of 8, how to save money at Universal Orlando, family vacation budget" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    @font-face { font-family: 'Solenza'; src: url('Solenza-Regular.otf') format('opentype'); font-weight: 400; }
+    @font-face { font-family: 'Solenza'; src: url('Solenza-Outline.otf') format('opentype'); font-weight: 300; }
+    :root {
+      --pink: #ec709a; --yellow: #ffe497; --blue: #63c3ef;
+      --dark: #231f20; --off-white: #efeee8;
+      --text: #222222; --muted: #777777; --radius: 16px;
+      --font-brand: 'Solenza', 'Nunito', sans-serif;
+      --font-body: 'Nunito Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--off-white); color: var(--text); overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 18px 40px; display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,0.96); backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+    .nav-logo { font-family: var(--font-brand); font-size: 1.4rem; letter-spacing: 0.5px; display: flex; align-items: center; gap: 4px; }
+    .nav-logo span:nth-child(1) { color: var(--pink); }
+    .nav-logo span:nth-child(2) { color: var(--yellow); }
+    .nav-logo span:nth-child(3) { color: var(--blue); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-weight: 700; font-size: 0.9rem; letter-spacing: 0.5px; text-transform: uppercase; color: var(--text); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { background: var(--pink); color: white !important; padding: 10px 22px; border-radius: 50px; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { width: 26px; height: 2px; background: var(--text); border-radius: 2px; }
+
+    .blog-hero { margin-top: 70px; position: relative; height: 480px; overflow: hidden; }
+    .blog-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+    .blog-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(35,31,32,0.3) 0%, rgba(35,31,32,0.78) 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+      padding: 48px 24px; text-align: center;
+    }
+    .blog-hero-category { font-size: 0.75rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--yellow); margin-bottom: 12px; }
+    .blog-hero-title { font-family: var(--font-brand); font-size: clamp(1.8rem, 4vw, 3rem); color: white; line-height: 1.15; max-width: 800px; margin-bottom: 16px; }
+    .blog-hero-meta { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+
+    .blog-container { max-width: 780px; margin: 0 auto; padding: 64px 24px 80px; }
+    .blog-intro { font-size: 1.15rem; line-height: 1.85; color: #444; margin-bottom: 40px; font-weight: 600; border-left: 4px solid var(--blue); padding-left: 20px; }
+    .blog-body h2 { font-family: var(--font-brand); font-size: 1.8rem; color: var(--dark); margin: 48px 0 16px; line-height: 1.2; }
+    .blog-body h3 { font-family: var(--font-body); font-weight: 800; font-size: 1.15rem; color: var(--dark); margin: 32px 0 12px; }
+    .blog-body p { font-size: 1.05rem; line-height: 1.85; color: #444; margin-bottom: 20px; }
+    .blog-body ul { padding-left: 24px; margin-bottom: 20px; }
+    .blog-body li { font-size: 1.05rem; line-height: 1.8; color: #444; margin-bottom: 10px; }
+    .blog-body strong { color: var(--dark); font-weight: 800; }
+    .tip-box { background: linear-gradient(135deg, #fff8e1, #e1f4fc); border-radius: var(--radius); padding: 24px 28px; margin: 32px 0; border-left: 4px solid var(--yellow); }
+    .tip-box .tip-label { font-size: 0.75rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #c49a00; margin-bottom: 8px; }
+    .tip-box p { margin: 0; font-size: 1rem; color: #444; line-height: 1.7; }
+    .section-divider { width: 60px; height: 4px; background: var(--blue); border-radius: 2px; margin: 48px 0; }
+    .blog-cta { background: var(--dark); border-radius: 20px; padding: 40px; text-align: center; margin-top: 64px; }
+    .blog-cta h3 { font-family: var(--font-brand); color: white; font-size: 1.6rem; margin-bottom: 12px; }
+    .blog-cta p { color: rgba(255,255,255,0.6); margin-bottom: 24px; font-size: 0.95rem; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: 50px; font-family: var(--font-body); font-weight: 800; font-size: 0.95rem; cursor: pointer; border: none; transition: transform 0.2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--pink); color: white; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 0.9rem; font-weight: 700; margin-bottom: 40px; transition: color 0.2s; }
+    .back-link:hover { color: var(--pink); }
+
+    footer { background: #0a0a0a; color: white; padding: 48px 40px 24px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 24px; }
+    .footer-logo { font-family: var(--font-brand); font-size: 1.4rem; display: flex; gap: 4px; }
+    .footer-logo span:nth-child(1) { color: var(--pink); }
+    .footer-logo span:nth-child(2) { color: var(--yellow); }
+    .footer-logo span:nth-child(3) { color: var(--blue); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; font-size: 0.85rem; color: rgba(255,255,255,0.3); text-align: center; }
+
+    @media (max-width: 768px) {
+      nav { padding: 14px 16px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .blog-hero { height: 360px; }
+      .blog-hero-title { font-size: 1.6rem; }
+      .blog-container { padding: 40px 16px 60px; }
+      .blog-body h2 { font-size: 1.5rem; }
+      footer { padding: 40px 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span>MEET</span>&nbsp;<span>THE</span>&nbsp;<span>ROBERSONS</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#videos">Videos</a></li>
+      <li><a href="index.html#blog">Blog</a></li>
+      <li><a href="index.html#partnerships">Partnerships</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Work With Us</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="blog-hero">
+    <img src="kids-fort-wilderness.jpg" alt="Roberson kids enjoying a family travel adventure" />
+    <div class="blog-hero-overlay">
+      <div class="blog-hero-category">Family Travel</div>
+      <h1 class="blog-hero-title">How We Budget Family Travel Without Sacrificing the Experience</h1>
+      <div class="blog-hero-meta">June 15, 2026 &nbsp;&middot;&nbsp; 7 min read &nbsp;&middot;&nbsp; By Jordan & Ashly Roberson</div>
+    </div>
+  </div>
+
+  <div class="blog-container">
+    <a href="index.html#blog" class="back-link">&#8592; Back to Blog</a>
+
+    <p class="blog-intro">We are a family of 8. That is two adults, six kids, and a whole lot of theme park magic to fund. People ask us constantly how we make it work financially without cutting out all the fun. Honestly? We have just gotten really good at thinking strategically about every dollar.</p>
+
+    <div class="blog-body">
+
+      <h2>Let's Be Real About What Family Travel Actually Costs</h2>
+      <p>We are not going to pretend that taking a family of 8 to Universal Orlando or Disney World is cheap. It is not. Theme park tickets are expensive. Hotels multiply fast. Food adds up in ways that will genuinely surprise you the first time you see the bill.</p>
+      <p>But here is what we have learned after years of doing this: the cost of a bad trip is just as high as the cost of a great one. If you spend less and end up miserable, stressed, and rushing through everything, what did you actually save? We would rather spend thoughtfully and show up ready to enjoy every single moment.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>Start With the Big Three: Tickets, Hotels, and Food</h2>
+      <p>Almost every dollar on a theme park trip falls into one of three buckets. Tickets. Where you sleep. What you eat. Once you understand the levers in each category, you can make smart tradeoffs without ruining the experience.</p>
+
+      <h3>Getting the Most Out of Your Ticket Budget</h3>
+      <p>Annual passes are one of the best kept secrets in theme park travel, especially if you visit more than once a year. Universal Orlando's annual pass program offers multiple tiers and for families who visit even twice, the math usually works in your favor. We run the numbers every single year before deciding whether to buy individual tickets or commit to a pass.</p>
+      <p>For first timers, multi-day tickets are almost always a better value than single day tickets. The price per day drops significantly the more days you add. Universal Orlando regularly runs specials where kids ticket prices are discounted or a third day is added free. We never buy tickets at full rack rate if we can help it.</p>
+
+      <div class="tip-box">
+        <div class="tip-label">Roberson Family Tip</div>
+        <p>Sign up for the Universal Orlando and Disney World email lists. Both parks run seasonal promotions and some of the best deals come through email with 24 to 48 hour windows. Being on the list has saved our family hundreds of dollars over the years.</p>
+      </div>
+
+      <h3>Where to Sleep Without Spending Everything You Have</h3>
+      <p>Hotels near Universal Orlando range from budget to absolutely wild. Here is our honest breakdown of how we think about it.</p>
+      <p>Staying on site at Universal has one massive benefit: Early Park Admission. Premier hotel guests get into the parks one hour before regular guests every single day. At Epic Universe and Islands of Adventure, that one hour can save you hours of waiting in line. We have found that even one night on site at the beginning of a trip pays off big when it comes to Mario Kart wait times at Epic Universe.</p>
+      <p>For longer trips, we often mix it up. One or two nights on site to get the early entry benefit on the days we care most about, then move to an off site hotel for the remaining nights. Cabana Bay Beach Resort is our go-to on site option for the budget. It has a retro vibe the kids love, a great pool, and the price is much more reasonable than the Premier hotels.</p>
+
+      <h3>Feeding a Family of 8 Without Going Broke</h3>
+      <p>Food is where theme park trips quietly spiral. At Universal Orlando, a meal for our whole family at a quick service location can run well over a hundred dollars when everyone gets a drink. Here is how we handle it.</p>
+      <p>We always start the day with breakfast at the hotel or a nearby spot off property. You simply do not need to spend theme park prices on eggs and waffles. Packing snacks is also a major move. Our kids each get a small backpack and it is stocked before we walk through the gates every single day.</p>
+      <p>For meals inside the park, we pick one or two real meal stops and skip the impulse buys. We prioritize sit down dining for one meal during a multi-day trip because the experience is worth it. Mythos Restaurant at Islands of Adventure is genuinely great food and the memory of eating there is part of the trip for our kids. That investment makes sense to us.</p>
+
+      <div class="tip-box">
+        <div class="tip-label">Roberson Family Tip</div>
+        <p>Universal Orlando's refillable souvenir cups are a great deal for a big family on a multi-day visit. One cup per adult handles a lot of drinks over the course of several days. The kids think having their own cup is part of the adventure, which honestly tracks.</p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h2>The Mindset Shift That Changed Everything for Us</h2>
+      <p>A few years ago, we stopped thinking about family travel as something we had to afford and started thinking about it as something we had to plan for. Those two things sound similar but they are actually totally different.</p>
+      <p>Affording something is reactive. You look at a number, flinch, and either do it or do not. Planning is proactive. You decide what you want the experience to look and feel like, work backward from there, and build a budget that serves the goal.</p>
+      <p>For us, the goal has always been creating memories that our six kids carry with them. Not perfection. Not every upcharge and add-on. Just great days together as a family doing things we genuinely love. Once that was the goal, a lot of the budget decisions got easier.</p>
+
+      <h3>Where We Spend More (On Purpose)</h3>
+      <p>We are intentional about spending more in a few specific areas. Great hotel location so we are not exhausted by commuting. One memorable sit down meal per trip. At least one "yes day" where the kids get a little more flexibility on treats and souvenirs. These are the things that make a trip feel special versus just functional.</p>
+
+      <h3>Where We Spend Less Without Feeling It</h3>
+      <p>We save big on breakfasts, snacks, and merchandise. We almost never buy every branded item that catches a kid's eye in the moment. We have a rule: if you still want it on the last day of the trip, we talk about it. That rule alone has saved us probably thousands of dollars over the years. The kids know it, they accept it, and honestly most of the time they forget about it by lunch.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>Planning the Trip Is Part of the Experience</h2>
+      <p>One thing we never skip is involving the whole family in the planning. When kids have a say in what we do, they are more invested in the actual trip. We hold a family planning session a few months out where everyone shares what they are most excited about. Then we build the itinerary around those priorities.</p>
+      <p>Does that mean our trips are perfectly optimized? No. Does it mean our kids feel like their voice matters and they are genuinely looking forward to every part of the trip? Absolutely. That energy is worth more than any logistics savings.</p>
+
+      <div class="section-divider"></div>
+
+      <h2>The Bottom Line</h2>
+      <p>You do not have to choose between a great trip and a smart budget. You just have to think intentionally about both. Know where the real value is for your family. Protect the moments that matter. Let go of the stuff that does not. And remember that the best part of any trip is the time you spend together, not the money you spend while you are there.</p>
+      <p>We have taken more trips than we can count with our six kids and the ones they remember most are never about what cost the most. They are about the moments. The Butterbeer. The dragon flying overhead. The look on a six-year-old's face when they first see the Hogwarts castle lit up at night. That stuff is free.</p>
+
+      <div class="blog-cta">
+        <h3>See how we do it in real time</h3>
+        <p>We document every trip, every ride, and every real family moment on YouTube. Come along for the adventure.</p>
+        <a href="https://www.youtube.com/@TheRobersonsTravel" target="_blank" class="btn btn-primary">Watch on YouTube &#8594;</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span>MEET</span>&nbsp;<span>THE</span>&nbsp;<span>ROBERSONS</span>
+      </div>
+      <span style="color:rgba(255,255,255,0.3); font-size:0.85rem;">Theme Parks. Travel. FUN.</span>
+    </div>
+    <div class="footer-bottom">&#169; 2026 Meet The Robersons. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
