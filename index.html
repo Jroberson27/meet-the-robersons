@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet The Robersons | Universal Orlando & Disney World Family Vlog</title>
+  <meta name="description" content="Meet The Robersons. An Orlando family of 8 covering Universal Orlando Resort, Walt Disney World, Epic Universe, and family travel. Real tips. Real memories." />
+  <meta name="keywords" content="Universal Orlando family, Disney World with kids, Epic Universe, Orlando family vlog, theme park tips, family travel blog, Orlando locals, family of 8" />
+
+  <!-- Google Fonts fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── FONTS ──────────────────────────────────────────── */
+    @font-face {
+      font-family: 'Solenza';
+      src: url('Solenza-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Solenza';
+      src: url('Solenza-Outline.otf') format('opentype');
+      font-weight: 300;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'SolenzaShadow';
+      src: url('Solenza-Shadow.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    /* ─── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --pink:   #ec709a;
+      --yellow: #ffe497;
+      --blue:   #63c3ef;
+      --dark:   #231f20;
+      --off-white: #efeee8;
+      --gray:   #e8e7e0;
+      --text:   #222222;
+      --muted:  #777777;
+      --radius: 16px;
+      --font-brand: 'Solenza', 'Nunito', sans-serif;
+      --font-body: 'Nunito Sans', sans-serif;
+    }
+
+    /* ─── RESET ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--off-white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── NAV ────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      padding: 12px 40px;
+    }
+    .nav-logo {
+      font-family: var(--font-brand);
+      font-size: 1.5rem;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .nav-logo span:nth-child(1) { color: var(--pink); }
+    .nav-logo span:nth-child(2) { color: var(--yellow); }
+    .nav-logo span:nth-child(3) { color: var(--blue); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: white;
+      transition: color 0.2s;
+    }
+    nav.scrolled .nav-links a { color: var(--text); }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta {
+      background: var(--pink);
+      color: white !important;
+      padding: 10px 22px;
+      border-radius: 50px;
+      transition: background 0.2s, transform 0.2s !important;
+    }
+    .nav-cta:hover { background: #d45580; transform: translateY(-1px); }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      width: 26px; height: 2px;
+      background: white;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    nav.scrolled .hamburger span { background: var(--text); }
+
+    /* ─── HERO ───────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('hero-family.jpg') center 30%/cover no-repeat;
+      filter: brightness(0.42);
+      transform: scale(1.03);
+      transition: transform 8s ease-out;
+    }
+    .hero-bg.loaded { transform: scale(1); }
+
+    /* video modal */
+    .video-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(0,0,0,0.92);
+      align-items: center;
+      justify-content: center;
+    }
+    .video-modal.open { display: flex; }
+    .video-modal-inner {
+      position: relative;
+      width: min(900px, 94vw);
+      aspect-ratio: 16/9;
+    }
+    .video-modal iframe {
+      width: 100%; height: 100%;
+      border: none;
+      border-radius: 12px;
+    }
+    .video-modal-close {
+      position: absolute;
+      top: -44px; right: 0;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 20px;
+      max-width: 900px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+    }
+    .hero-title {
+      font-family: var(--font-brand);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .hero-title .meet {
+      display: block;
+      font-size: clamp(4rem, 10vw, 8rem);
+      color: var(--pink);
+      text-shadow: 0 4px 20px rgba(236,112,154,0.4);
+    }
+    .hero-title .the {
+      display: block;
+      font-size: clamp(3rem, 8vw, 6rem);
+      color: var(--yellow);
+      text-shadow: 0 4px 20px rgba(255,228,151,0.5);
+      margin-top: -8px;
+    }
+    .hero-title .robersons {
+      display: block;
+      font-size: clamp(4rem, 10vw, 8rem);
+      color: var(--blue);
+      text-shadow: 0 4px 20px rgba(99,195,239,0.4);
+      margin-top: -12px;
+    }
+    .hero-tagline {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      color: rgba(255,255,255,0.9);
+      font-style: italic;
+      font-weight: 400;
+      margin: 20px 0 36px;
+      letter-spacing: 0.5px;
+    }
+    .hero-tagline strong { font-style: normal; color: white; font-weight: 800; }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .btn-primary { background: var(--pink); color: white; }
+    .btn-secondary {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      color: white;
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.25); }
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+    .hero-scroll svg { opacity: 0.6; }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ─── SECTION BASE ───────────────────────────────────── */
+    section { padding: 100px 40px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-brand);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    /* ─── STATS BAR ──────────────────────────────────────── */
+    .stats-bar {
+      background: var(--dark);
+      padding: 32px 40px;
+    }
+    .stats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .stat {
+      text-align: center;
+      color: white;
+    }
+    .stat-number {
+      font-family: var(--font-brand);
+      font-size: 2.4rem;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .stat-divider {
+      width: 1px;
+      height: 48px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* ─── ABOUT ──────────────────────────────────────────── */
+    .about { background: var(--off-white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.12);
+    }
+    .about-img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, #f5dde8 0%, #daeef9 50%, #fff8d6 100%);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.12);
+      font-family: var(--font-brand);
+      font-size: 1.2rem;
+      color: var(--muted);
+      text-align: center;
+      padding: 40px;
+    }
+    .about-accent {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 160px;
+      height: 160px;
+      background: var(--yellow);
+      border-radius: var(--radius);
+      z-index: -1;
+    }
+    .about-accent-2 {
+      position: absolute;
+      top: -16px;
+      left: -16px;
+      width: 80px;
+      height: 80px;
+      background: var(--pink);
+      border-radius: 50%;
+      z-index: -1;
+      opacity: 0.3;
+    }
+    .about-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gray);
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .about-tag span { font-size: 1rem; }
+    .about-text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 16px;
+    }
+    .about-pillars {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+    .pillar {
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .pillar-pink { background: #f8dfe9; color: #b84f76; }
+    .pillar-blue { background: #daeef9; color: #2e87b5; }
+    .pillar-yellow { background: #fff5cc; color: #9a7a00; }
+
+    /* ─── CONTENT HUB ────────────────────────────────────── */
+    .content-hub { background: var(--gray); }
+    .content-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .video-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: transform 0.25s, box-shadow 0.25s;
+      cursor: pointer;
+    }
+    .video-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+    }
+    .video-thumb {
+      position: relative;
+      aspect-ratio: 16/9;
+      background: #1a1a2e;
+      overflow: hidden;
+    }
+    .video-thumb-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .video-thumb-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .play-btn {
+      width: 56px;
+      height: 56px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .video-card:hover .play-btn {
+      transform: scale(1.1);
+      background: var(--pink);
+    }
+    .video-card:hover .play-btn svg { color: white; }
+    .video-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .video-tag-pink { background: var(--pink); color: white; }
+    .video-tag-blue { background: var(--blue); color: white; }
+    .video-tag-yellow { background: var(--yellow); color: var(--dark); }
+    .video-info { padding: 18px 20px 20px; }
+    .video-title {
+      font-family: var(--font-body);
+      font-weight: 800;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .video-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .video-views {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* ─── BLOG ───────────────────────────────────────────── */
+    .blog { background: var(--off-white); }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .blog-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    }
+    .blog-card.featured { grid-row: span 2; }
+    .blog-thumb {
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #f8e1ef, #e1f4fc);
+      overflow: hidden;
+    }
+    .blog-card.featured .blog-thumb { aspect-ratio: 4/3; }
+    .blog-thumb-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+    .blog-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
+    .blog-category {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .blog-title {
+      font-family: var(--font-body);
+      font-weight: 800;
+      font-size: 1rem;
+      line-height: 1.4;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+    .blog-card.featured .blog-title { font-size: 1.3rem; }
+    .blog-excerpt {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .blog-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid #f0f0f0;
+      padding-top: 14px;
+      margin-top: auto;
+    }
+    .read-more {
+      font-weight: 800;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.2s;
+    }
+    .blog-card:hover .read-more { gap: 8px; }
+
+    /* ─── PARTNERSHIPS ───────────────────────────────────── */
+    .partnerships {
+      background: var(--dark);
+      color: white;
+    }
+    .partnerships .section-sub { color: rgba(255,255,255,0.6); }
+    .partner-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 56px 0;
+    }
+    .partner-feature {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .partner-feature:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.15);
+    }
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .feature-icon-pink { background: rgba(236,112,154,0.2); }
+    .feature-icon-blue { background: rgba(99,195,239,0.2); }
+    .feature-icon-yellow { background: rgba(255,228,151,0.25); }
+    .partner-feature h3 {
+      font-family: var(--font-body);
+      font-weight: 800;
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+    .partner-feature p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+    }
+    .partner-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding: 32px;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.06);
+      margin-bottom: 48px;
+    }
+    .partner-logo-placeholder {
+      height: 36px;
+      display: flex;
+      align-items: center;
+      font-weight: 800;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .partner-cta {
+      text-align: center;
+    }
+    .partner-cta p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      margin-top: 16px;
+    }
+
+    /* ─── CONTACT ────────────────────────────────────────── */
+    .contact { background: var(--off-white); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 56px;
+    }
+    .contact-info h3 {
+      font-family: var(--font-brand);
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+    .contact-info p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .contact-items { display: flex; flex-direction: column; gap: 16px; }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.95rem;
+    }
+    .contact-item-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .social-link {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: background 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+    .social-link:hover { transform: translateY(-2px); }
+    .social-link.yt:hover { background: #ff0000; }
+    .social-link.ig:hover { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .social-link.tt:hover { background: #000; }
+    .form-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    }
+    .form-card h3 {
+      font-family: var(--font-brand);
+      font-size: 1.6rem;
+      margin-bottom: 24px;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #eee;
+      border-radius: 10px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text);
+      background: white;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--pink); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-submit { width: 100%; padding: 14px; font-size: 1rem; }
+
+    /* ─── FOOTER ─────────────────────────────────────────── */
+    footer {
+      background: #0a0a0a;
+      color: white;
+      padding: 60px 40px 32px;
+    }
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand .nav-logo {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+    .footer-brand p {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .footer-col h4 {
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li {
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .footer-col ul li:hover { color: white; }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.3);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-dot {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: inline-block;
+      margin: 0 8px;
+    }
+
+    /* ─── MOBILE MENU ────────────────────────────────────── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 99;
+      background: rgba(35,31,32,0.98);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: var(--font-brand);
+      font-size: 2rem;
+      color: white;
+      letter-spacing: 1px;
+    }
+    .mobile-menu a:hover { color: var(--pink); }
+    .mobile-menu-close {
+      position: absolute;
+      top: 24px; right: 24px;
+      background: none; border: none;
+      color: white; font-size: 2rem;
+      cursor: pointer; line-height: 1;
+    }
+
+    /* ─── MOBILE ─────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      nav.scrolled { padding: 12px 24px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 64px 20px; }
+      .about-grid,
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-accent, .about-accent-2 { display: none; }
+      .video-grid { grid-template-columns: 1fr 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .blog-card.featured { grid-row: auto; }
+      .partner-features { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .stat-divider { display: none; }
+      .stats-inner { gap: 24px; justify-content: center; }
+      .stat-number { font-size: 1.8rem; }
+      .stats-bar { padding: 24px 20px; }
+    }
+    @media (max-width: 600px) {
+      nav { padding: 14px 16px; }
+      .nav-logo { font-size: 1.1rem; }
+      section { padding: 56px 16px; }
+      .video-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-buttons { flex-direction: column; align-items: center; }
+      .hero-buttons .btn { width: 100%; max-width: 280px; justify-content: center; }
+      .stats-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+      .stat-number { font-size: 1.6rem; }
+      .hero-badge { font-size: 0.7rem; padding: 6px 14px; }
+      .section-title { font-size: clamp(1.8rem, 6vw, 2.5rem); }
+      .contact-grid { gap: 32px; }
+      .form-card { padding: 24px 20px; }
+      .partner-features { gap: 16px; }
+      .partner-feature { padding: 24px 20px; }
+      footer { padding: 48px 16px 24px; }
+      .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
+      /* Gallery mobile */
+      .gallery-grid-top { grid-template-columns: 1fr 1fr !important; grid-template-rows: auto !important; }
+      .gallery-grid-top > div:first-child { grid-column: span 2 !important; grid-row: auto !important; aspect-ratio: 16/9 !important; }
+      .gallery-grid-bottom { grid-template-columns: 1fr !important; }
+    }
+
+    /* ─── SCROLL REVEAL ──────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══════════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span>MEET</span>&nbsp;<span>THE</span>&nbsp;<span>ROBERSONS</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#partnerships">Partnerships</a></li>
+      <li><a href="#contact" class="nav-cta">Work With Us</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ═══ MOBILE MENU ═══════════════════════════════════ -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" onclick="toggleMenu()">✕</button>
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#videos" onclick="toggleMenu()">Videos</a>
+    <a href="#blog" onclick="toggleMenu()">Blog</a>
+    <a href="#partnerships" onclick="toggleMenu()">Partnerships</a>
+    <a href="#contact" onclick="toggleMenu()" style="color:var(--pink);">Work With Us</a>
+  </div>
+
+  <!-- ═══ HERO ══════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">🎢 Orlando Locals · Universal Orlando · Disney World · Epic Universe</div>
+      <h1 class="hero-title">
+        <span class="meet">MEET</span>
+        <span class="the">THE</span>
+        <span class="robersons">ROBERSONS</span>
+      </h1>
+      <p class="hero-tagline">
+        Your family's guide to <strong>Universal Orlando</strong>, <strong>Disney World</strong> &amp; beyond. Straight from an Orlando family of 8.
+      </p>
+      <div class="hero-buttons">
+        <button onclick="openVideo()" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Watch Our Latest
+        </button>
+        <a href="#contact" class="btn btn-secondary">
+          Work With Us →
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- ═══ STATS BAR ══════════════════════════════════════ -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat">
+        <div class="stat-number" style="color: var(--pink);">6,380</div>
+        <div class="stat-label">Total Followers</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-number" style="color: var(--blue);">171K+</div>
+        <div class="stat-label">Total Views</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-number" style="color: var(--yellow);">99</div>
+        <div class="stat-label">Videos Published</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-number" style="color: var(--pink);">8</div>
+        <div class="stat-label">Family Members</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ABOUT ══════════════════════════════════════════ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap reveal">
+          <img src="kids-universal-globe.jpg" alt="The Roberson kids at Universal Studios" class="about-img" />
+          <div class="about-accent"></div>
+          <div class="about-accent-2"></div>
+        </div>
+        <div class="about-text reveal">
+          <div class="about-tag">
+            <span>👨‍👩‍👧‍👦</span>
+            The Roberson Family
+          </div>
+          <div class="section-label" style="color: var(--pink);">Our Story</div>
+          <h2 class="section-title">Real family.<br/>Real adventures.</h2>
+          <p>We're Jordan & Ashly, parents to six amazing kids and Orlando locals who literally live minutes from Universal Orlando Resort and Walt Disney World. Theme parks aren't a vacation for us. They're our backyard.</p>
+          <p>What started as capturing our family's trips turned into a full-time mission: helping real families navigate theme parks, plan smarter vacations, and make memories that last. From Epic Universe opening day to Fort Wilderness at Christmas. If it's worth doing, we're documenting it.</p>
+          <p>No fluff. No fake reactions. Just a family of 8 who loves every minute of this life and wants to bring you along for the ride.</p>
+          <div class="about-pillars">
+            <span class="pillar pillar-pink">🎢 Universal Orlando</span>
+            <span class="pillar pillar-blue">🏰 Disney World</span>
+            <span class="pillar pillar-yellow">🌍 Family Travel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTENT HUB ════════════════════════════════════ -->
+  <section class="content-hub" id="videos">
+    <div class="container">
+      <div class="content-header reveal">
+        <div>
+          <div class="section-label" style="color: var(--blue);">Latest Content</div>
+          <h2 class="section-title">Theme park tips.<br/>Straight from the source.</h2>
+          <p class="section-sub">Epic Universe first looks, Disney World family guides, Universal Orlando hacks. New videos every week from Orlando locals who know these parks inside and out.</p>
+        </div>
+        <a href="https://www.youtube.com/@TheRobersonsTravel" target="_blank" class="btn btn-primary">
+          View All Videos →
+        </a>
+      </div>
+      <div class="video-grid">
+        <!-- Card 1 -->
+        <div class="video-card reveal">
+          <div class="video-thumb">
+            <img src="epic-entrance.jpg" alt="Epic Universe Entrance" class="video-thumb-img" />
+            <div class="video-thumb-placeholder" style="position:absolute;inset:0;background:rgba(0,0,0,0.25);">
+              <div class="play-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#111"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <span class="video-tag video-tag-pink">Epic Universe</span>
+          </div>
+          <div class="video-info">
+            <div class="video-title">Epic Universe FULL DAY with 4 Kids: Everything You Need to Know</div>
+            <div class="video-meta">
+              <div class="video-views">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                Views
+              </div>
+              <span>Latest</span>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="video-card reveal">
+          <div class="video-thumb">
+            <img src="disney-castle.jpg" alt="Cinderella Castle Disney World" class="video-thumb-img" />
+            <div class="video-thumb-placeholder" style="position:absolute;inset:0;background:rgba(0,0,0,0.25);">
+              <div class="play-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#111"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <span class="video-tag video-tag-blue">Disney</span>
+          </div>
+          <div class="video-info">
+            <div class="video-title">We Took Our 4 Kids to Disney World. Here's What Really Happened</div>
+            <div class="video-meta">
+              <div class="video-views">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                Views
+              </div>
+              <span>Recent</span>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="video-card reveal">
+          <div class="video-thumb">
+            <img src="kids-mario-energy.jpg" alt="Roberson kids at Universal" class="video-thumb-img" />
+            <div class="video-thumb-placeholder" style="position:absolute;inset:0;background:rgba(0,0,0,0.2);">
+              <div class="play-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#111"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <span class="video-tag video-tag-yellow">Family Fun</span>
+          </div>
+          <div class="video-info">
+            <div class="video-title">Top Tips for Traveling with Kids Under 10 (That Actually Work)</div>
+            <div class="video-meta">
+              <div class="video-views">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                Views
+              </div>
+              <span>Fan favorite</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BLOG ═══════════════════════════════════════════ -->
+  <section class="blog" id="blog">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label" style="color: var(--yellow);">From The Blog</div>
+        <h2 class="section-title">Park guides &amp; family travel tips.</h2>
+        <p class="section-sub">Universal Orlando crowd calendars, Disney World budget breakdowns, Epic Universe guides. Written by a family that goes every week, not once a year.</p>
+      </div>
+      <div class="blog-grid">
+        <!-- Featured -->
+        <div class="blog-card featured reveal">
+          <div class="blog-thumb" style="min-height: 280px; overflow:hidden;">
+            <img src="epic-night.jpg" alt="Epic Universe at night" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          </div>
+          <div class="blog-body">
+            <div class="blog-category" style="color: var(--pink);">Theme Parks</div>
+            <div class="blog-title">The Ultimate Guide to Universal Studios Orlando with Kids: Everything We Wish We Knew Before Our First Trip</div>
+            <div class="blog-excerpt">After six trips to Universal Studios, we finally put together the guide we wish we'd had from the start. Crowd tips, height requirements, what to skip, and what's absolutely worth the money for families.</div>
+            <div class="blog-footer">
+              <span>June 20, 2026 · 8 min read</span>
+              <a href="#" class="read-more" style="color: var(--pink);">Read →</a>
+            </div>
+          </div>
+        </div>
+        <!-- Post 2 -->
+        <div class="blog-card reveal">
+          <div class="blog-thumb" style="overflow:hidden;">
+            <img src="kids-fort-wilderness.jpg" alt="Roberson kids at Fort Wilderness" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          </div>
+          <div class="blog-body">
+            <div class="blog-category" style="color: var(--blue);">Travel</div>
+            <div class="blog-title">How We Budget Family Travel Without Sacrificing the Experience</div>
+            <div class="blog-excerpt">We don't do budget travel for the sake of it. We do smart travel. Here's our real approach.</div>
+            <div class="blog-footer">
+              <span>June 15, 2026 · 5 min</span>
+              <a href="#" class="read-more" style="color: var(--blue);">Read →</a>
+            </div>
+          </div>
+        </div>
+        <!-- Post 3 -->
+        <div class="blog-card reveal">
+          <div class="blog-thumb" style="overflow:hidden;">
+            <img src="kid-birthday.jpg" alt="Birthday at Disney Fort Wilderness" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          </div>
+          <div class="blog-body">
+            <div class="blog-category" style="color: var(--yellow); color: #9a7a00;">Family Life</div>
+            <div class="blog-title">Why We Document Everything (And Why You Should Too)</div>
+            <div class="blog-excerpt">Creating memories on camera started as a hobby. Now it's our legacy and our business.</div>
+            <div class="blog-footer">
+              <span>June 8, 2026 · 4 min</span>
+              <a href="#" class="read-more" style="color: #9a7a00;">Read →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PHOTO GALLERY ═══════════════════════════════════ -->
+  <section style="background: var(--dark); padding: 80px 40px;">
+    <div class="container">
+      <div class="reveal" style="margin-bottom:40px;">
+        <div class="section-label" style="color: var(--blue);">In The Wild</div>
+        <h2 class="section-title" style="color:white;">Epic moments,<br/>every trip.</h2>
+      </div>
+      <div class="gallery-grid-top" style="display:grid; grid-template-columns: repeat(4,1fr); grid-template-rows: auto auto; gap:12px;">
+        <div style="grid-column:span 2; grid-row:span 2; border-radius:var(--radius); overflow:hidden; aspect-ratio:1;">
+          <img src="hero-family.jpg" alt="The Robersons at Universal" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        </div>
+        <div style="border-radius:var(--radius); overflow:hidden; aspect-ratio:1;">
+          <img src="epic-fountains.jpg" alt="Epic Universe fountains" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        </div>
+        <div style="border-radius:var(--radius); overflow:hidden; aspect-ratio:1;">
+          <img src="epic-viking.jpg" alt="Epic Universe Viking land" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        </div>
+        <div style="border-radius:var(--radius); overflow:hidden; aspect-ratio:1;">
+          <img src="kid-horseback.jpg" alt="Roberson kid horseback riding at Disney" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        </div>
+        <div style="border-radius:var(--radius); overflow:hidden; aspect-ratio:1;">
+          <img src="dad-son.jpg" alt="Jordan and son" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        </div>
+      </div>
+      <div class="gallery-grid-bottom" style="display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-top:12px;">
+        <div style="border-radius:var(--radius); overflow:hidden; aspect-ratio:16/9;">
+          <img src="epic-mario-portal.jpg" alt="Epic Universe Mario portal" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        </div>
+        <div style="border-radius:var(--radius); overflow:hidden; aspect-ratio:16/9;">
+          <img src="mom-universal.jpg" alt="Bri at Universal Studios" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        </div>
+        <div style="border-radius:var(--radius); overflow:hidden; aspect-ratio:16/9;">
+          <img src="kids-mario-energy.jpg" alt="Roberson kids at Universal" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:36px;">
+        <a href="https://www.instagram.com/meet_therobersons" target="_blank" class="btn btn-secondary" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.3);color:white;">
+          Follow on Instagram for more →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PARTNERSHIPS ═══════════════════════════════════ -->
+  <section class="partnerships" id="partnerships">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label" style="color: var(--pink);">Work With Us</div>
+        <h2 class="section-title" style="color: white;">Your brand.<br/>Our audience.</h2>
+        <p class="section-sub">We work with theme parks, hotels, travel brands, and family products. Our audience trusts us because we only show up for things we actually use. They know the difference. If your brand fits a family of 8 living the theme park life in Orlando, we should talk.</p>
+      </div>
+      <div class="partner-features">
+        <div class="partner-feature reveal">
+          <div class="feature-icon feature-icon-pink">🎥</div>
+          <h3>Dedicated Videos</h3>
+          <p>Full-length YouTube videos and Shorts that feature your brand in the context of real family experiences at Universal Orlando, Disney World, and beyond. Authentic content with 6 kids in frame.</p>
+        </div>
+        <div class="partner-feature reveal">
+          <div class="feature-icon feature-icon-blue">📱</div>
+          <h3>Multi-Platform Coverage</h3>
+          <p>YouTube, Instagram Reels, and TikTok content reaching theme park families and travel-minded parents across every major platform.</p>
+        </div>
+        <div class="partner-feature reveal">
+          <div class="feature-icon feature-icon-yellow">✍️</div>
+          <h3>Blog &amp; SEO Content</h3>
+          <p>Long-form guides targeting high-intent search terms like "Universal Orlando with kids," "Epic Universe tips," and "Disney World family planning." Traffic that compounds over time.</p>
+        </div>
+      </div>
+      <div class="partner-logos reveal">
+        <div class="partner-logo-placeholder">Universal</div>
+        <div class="partner-logo-placeholder">·</div>
+        <div class="partner-logo-placeholder">Disney</div>
+        <div class="partner-logo-placeholder">·</div>
+        <div class="partner-logo-placeholder">Marriott</div>
+        <div class="partner-logo-placeholder">·</div>
+        <div class="partner-logo-placeholder">Your Brand</div>
+      </div>
+      <div class="partner-cta reveal">
+        <a href="#contact" class="btn btn-primary" style="font-size: 1rem; padding: 16px 40px;">
+          Request Our Media Kit →
+        </a>
+        <p>Response within 48 hours. Serious inquiries only.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═════════════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label" style="color: var(--pink);">Get In Touch</div>
+        <h2 class="section-title">Let's build something together.</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h3>Ready to partner<br/>with The Robersons?</h3>
+          <p>Whether you're a brand, a destination, or a fellow creator, we'd love to connect. Fill out the form and let's talk.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-item-icon" style="background: #fde8f3;">📧</div>
+              <span>inquiries.meettherobersons@gmail.com</span>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon" style="background: #e1f4fc;">📍</div>
+              <span>Orlando, FL · Travel Worldwide</span>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon" style="background: #fef8e1;">⏱️</div>
+              <span>Response time: within 48 hours</span>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="https://www.youtube.com/@TheRobersonsTravel" target="_blank" class="social-link yt" title="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/meet_therobersons" target="_blank" class="social-link ig" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@therobersonstravel" target="_blank" class="social-link tt" title="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="form-card reveal">
+          <h3>Send Us a Message</h3>
+          <form onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" placeholder="Jordan" required />
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Roberson" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="you@company.com" required />
+            </div>
+            <div class="form-group">
+              <label>Inquiry Type</label>
+              <select required>
+                <option value="" disabled selected>Select a type...</option>
+                <option>Brand Partnership</option>
+                <option>Media Kit Request</option>
+                <option>Travel Collaboration</option>
+                <option>Speaking / Appearance</option>
+                <option>General Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea placeholder="Tell us about your brand, campaign goals, and timeline..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">
+              Send Message →
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ══════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <span>MEET</span>&nbsp;<span>THE</span>&nbsp;<span>ROBERSONS</span>
+        </div>
+        <p>An Orlando family of 8 covering Universal Orlando Resort, Walt Disney World, Epic Universe, and family travel. We live this life every day and we bring you along for every ride.</p>
+        <div class="social-links">
+          <a href="https://www.youtube.com/@TheRobersonsTravel" target="_blank" class="social-link yt" style="background: rgba(255,255,255,0.08);" title="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/meet_therobersons" target="_blank" class="social-link ig" style="background: rgba(255,255,255,0.08);" title="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@therobersonstravel" target="_blank" class="social-link tt" style="background: rgba(255,255,255,0.08);" title="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li onclick="scrollTo('about')">About Us</li>
+          <li onclick="scrollTo('videos')">Videos</li>
+          <li onclick="scrollTo('blog')">Blog</li>
+          <li>Theme Parks</li>
+          <li>Travel Guides</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Business</h4>
+        <ul>
+          <li onclick="scrollTo('partnerships')">Partnerships</li>
+          <li>Media Kit</li>
+          <li onclick="scrollTo('contact')">Contact Us</li>
+          <li>Speaking</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li>Privacy Policy</li>
+          <li>Terms of Use</li>
+          <li>Disclosure</li>
+          <li>Cookie Policy</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Meet The Robersons. All rights reserved.</span>
+      <span>
+        Theme Parks<span class="footer-dot"></span>Travel<span class="footer-dot"></span>FUN
+      </span>
+    </div>
+  </footer>
+
+  <!-- VIDEO MODAL -->
+  <div class="video-modal" id="videoModal" onclick="closeVideoOnBg(event)">
+    <div class="video-modal-inner">
+      <button class="video-modal-close" onclick="closeVideo()">✕</button>
+      <iframe id="videoFrame" src="" allowfullscreen allow="autoplay"></iframe>
+    </div>
+  </div>
+
+  <script>
+    // ── Video modal ─────────────────────────────────────
+    // Replace VIDEO_ID with your actual latest YouTube video ID
+    const LATEST_VIDEO_ID = 'VIDEO_ID_HERE';
+    function openVideo() {
+      document.getElementById('videoFrame').src =
+        'https://www.youtube.com/embed/' + LATEST_VIDEO_ID + '?autoplay=1';
+      document.getElementById('videoModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeVideo() {
+      document.getElementById('videoFrame').src = '';
+      document.getElementById('videoModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function closeVideoOnBg(e) {
+      if (e.target === document.getElementById('videoModal')) closeVideo();
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeVideo(); });
+
+    // ── Mobile menu ─────────────────────────────────────
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+      document.body.style.overflow =
+        document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+    }
+
+    // ── Navbar scroll behavior ──────────────────────────
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // ── Hero background ken burns ───────────────────────
+    window.addEventListener('load', () => {
+      document.getElementById('heroBg').classList.add('loaded');
+    });
+
+    // ── Smooth scroll ───────────────────────────────────
+    function scrollTo(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ── Hamburger menu ──────────────────────────────────
+    function toggleMenu() {
+      const links = document.querySelector('.nav-links');
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+      if (links.style.display === 'flex') {
+        links.style.cssText = `
+          display: flex !important;
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          left: 0; right: 0;
+          background: white;
+          padding: 24px 40px 32px;
+          box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+          gap: 20px;
+        `;
+        links.querySelectorAll('a').forEach(a => a.style.color = '#222');
+      } else {
+        links.style.cssText = '';
+      }
+    }
+
+    // ── Scroll reveal ───────────────────────────────────
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // ── Form submit ─────────────────────────────────────
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-submit');
+      btn.textContent = '✅ Message Sent!';
+      btn.style.background = '#22c55e';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = 'Send Message →';
+        btn.style.background = '';
+        btn.disabled = false;
+        e.target.reset();
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
