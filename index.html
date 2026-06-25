@@ -1073,9 +1073,9 @@
       </div>
       <div class="video-grid">
         <!-- Card 1 -->
-        <div class="video-card reveal">
+        <div class="video-card reveal" onclick="openVideo('hDeYgpNCGPg')" style="cursor:pointer;">
           <div class="video-thumb">
-            <img src="epic-entrance.jpg" alt="Epic Universe Entrance" class="video-thumb-img" />
+            <img src="https://i.ytimg.com/vi/hDeYgpNCGPg/maxresdefault.jpg" alt="FIRST LOOK Epic Universe" class="video-thumb-img" />
             <div class="video-thumb-placeholder" style="position:absolute;inset:0;background:rgba(0,0,0,0.25);">
               <div class="play-btn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="#111"><path d="M8 5v14l11-7z"/></svg>
@@ -1084,57 +1084,57 @@
             <span class="video-tag video-tag-pink">Epic Universe</span>
           </div>
           <div class="video-info">
-            <div class="video-title">Epic Universe FULL DAY with 4 Kids: Everything You Need to Know</div>
+            <div class="video-title">FIRST LOOK Epic Universe: Can you Do Everything in One Day?</div>
             <div class="video-meta">
               <div class="video-views">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                Views
+                YouTube
               </div>
-              <span>Latest</span>
+              <span>Apr 2025</span>
             </div>
           </div>
         </div>
         <!-- Card 2 -->
-        <div class="video-card reveal">
+        <div class="video-card reveal" onclick="openVideo('ao8-BxQ6TuQ')" style="cursor:pointer;">
           <div class="video-thumb">
-            <img src="disney-castle.jpg" alt="Cinderella Castle Disney World" class="video-thumb-img" />
+            <img src="https://i.ytimg.com/vi/ao8-BxQ6TuQ/maxresdefault.jpg" alt="Universal Orlando Annual Pass 20 Years" class="video-thumb-img" />
             <div class="video-thumb-placeholder" style="position:absolute;inset:0;background:rgba(0,0,0,0.25);">
               <div class="play-btn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="#111"><path d="M8 5v14l11-7z"/></svg>
               </div>
             </div>
-            <span class="video-tag video-tag-blue">Disney</span>
+            <span class="video-tag video-tag-blue">Universal</span>
           </div>
           <div class="video-info">
-            <div class="video-title">We Took Our 4 Kids to Disney World. Here's What Really Happened</div>
+            <div class="video-title">Universal Orlando Annual Pass Worth It? Here's What 20 YEARS Taught Us</div>
             <div class="video-meta">
               <div class="video-views">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                Views
+                YouTube
               </div>
-              <span>Recent</span>
+              <span>May 2026</span>
             </div>
           </div>
         </div>
         <!-- Card 3 -->
-        <div class="video-card reveal">
+        <div class="video-card reveal" onclick="openVideo('o_Hg7mXwW1k')" style="cursor:pointer;">
           <div class="video-thumb">
-            <img src="kids-mario-energy.jpg" alt="Roberson kids at Universal" class="video-thumb-img" />
+            <img src="https://i.ytimg.com/vi/o_Hg7mXwW1k/maxresdefault.jpg" alt="Cabana Bay Beach Resort Universal" class="video-thumb-img" />
             <div class="video-thumb-placeholder" style="position:absolute;inset:0;background:rgba(0,0,0,0.2);">
               <div class="play-btn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="#111"><path d="M8 5v14l11-7z"/></svg>
               </div>
             </div>
-            <span class="video-tag video-tag-yellow">Family Fun</span>
+            <span class="video-tag video-tag-yellow">Hotels</span>
           </div>
           <div class="video-info">
-            <div class="video-title">Top Tips for Traveling with Kids Under 10 (That Actually Work)</div>
+            <div class="video-title">Cabana Bay Beach Resort: Is This Universal's BEST Hotel?</div>
             <div class="video-meta">
               <div class="video-views">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                Views
+                YouTube
               </div>
-              <span>Fan favorite</span>
+              <span>Jun 2025</span>
             </div>
           </div>
         </div>
@@ -1431,11 +1431,11 @@
 
   <script>
     // ── Video modal ─────────────────────────────────────
-    // Replace VIDEO_ID with your actual latest YouTube video ID
-    const LATEST_VIDEO_ID = 'VIDEO_ID_HERE';
-    function openVideo() {
+    const LATEST_VIDEO_ID = 'BwQiZ39pfhw';
+    function openVideo(id) {
+      const videoId = id || LATEST_VIDEO_ID;
       document.getElementById('videoFrame').src =
-        'https://www.youtube.com/embed/' + LATEST_VIDEO_ID + '?autoplay=1';
+        'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
       document.getElementById('videoModal').classList.add('open');
       document.body.style.overflow = 'hidden';
     }
