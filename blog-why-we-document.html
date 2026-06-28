@@ -3,9 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Why We Document Everything (And Why You Should Too) | Meet The Robersons</title>
-  <meta name="description" content="The Roberson family shares why they started documenting every family trip, what it has meant for their kids, and why capturing your family story matters more than you think." />
-  <meta name="keywords" content="family content creator, documenting family travel, family YouTube channel, family vlog tips, why document family memories, family storytelling" />
+  <title>Why We Film Every Family Trip on YouTube (And Why You Should Too) | Meet The Robersons</title>
+  <meta name="description" content="How documenting every family trip on YouTube changed the way the Robersons experience theme parks and travel — and why capturing your own family story matters more than you think." />
+  <meta name="keywords" content="family travel vlog YouTube, documenting family memories video, family content creator tips, how to start family YouTube channel, family vlog Universal Orlando, why document family trips, family storytelling on camera, large family travel vlog, Orlando family YouTube channel, family travel content creator 2026" />
+  <link rel="canonical" href="https://meettherobersons.com/blog-why-we-document.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Why We Film Every Family Trip on YouTube (And Why You Should Too)" />
+  <meta property="og:description" content="How documenting every family trip on YouTube changed the way the Robersons experience theme parks and travel — and why capturing your own family story matters more than you think." />
+  <meta property="og:url" content="https://meettherobersons.com/blog-why-we-document.html" />
+  <meta property="og:image" content="https://meettherobersons.com/kid-birthday.jpg" />
+  <meta property="og:site_name" content="Meet The Robersons" />
+  <meta property="article:published_time" content="2026-06-10" />
+  <meta property="article:author" content="Jordan &amp; Ashly Roberson" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Why We Film Every Family Trip on YouTube (And Why You Should Too)" />
+  <meta name="twitter:description" content="How documenting every family trip on YouTube changed the way the Robersons experience theme parks and travel — and why capturing your own family story matters more than you think." />
+  <meta name="twitter:image" content="https://meettherobersons.com/kid-birthday.jpg" />
+  <meta name="twitter:site" content="@meettherobersons" />
+  <meta name="author" content="Jordan &amp; Ashly Roberson" />
+  <meta name="robots" content="index, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -56,7 +72,7 @@
 
     .blog-container { max-width: 780px; margin: 0 auto; padding: 64px 24px 80px; }
     .blog-intro { font-size: 1.15rem; line-height: 1.85; color: #444; margin-bottom: 40px; font-weight: 600; border-left: 4px solid var(--blue); padding-left: 20px; }
-    .blog-body h2 { font-family: var(--font-brand); font-size: 1.8rem; color: var(--dark); margin: 48px 0 16px; line-height: 1.2; }
+    .blog-body h2 { font-family: var(--font-body); font-weight: 900; font-size: 1.8rem; color: var(--dark); margin: 48px 0 16px; line-height: 1.2; }
     .blog-body h3 { font-family: var(--font-body); font-weight: 800; font-size: 1.15rem; color: var(--dark); margin: 32px 0 12px; }
     .blog-body p { font-size: 1.05rem; line-height: 1.85; color: #444; margin-bottom: 20px; }
     .blog-body ul { padding-left: 24px; margin-bottom: 20px; }
@@ -78,6 +94,9 @@
     .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 0.9rem; font-weight: 700; margin-bottom: 40px; transition: color 0.2s; }
     .back-link:hover { color: var(--pink); }
 
+    .blog-body a { color: var(--blue); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+    .blog-body a:hover { opacity: 0.75; }
+    .blog-body a.btn { color: white; text-decoration: none; }
     footer { background: #0a0a0a; color: white; padding: 48px 40px 24px; }
     .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 24px; }
     .footer-logo { font-family: var(--font-brand); font-size: 1.4rem; display: flex; gap: 4px; }
@@ -98,7 +117,35 @@
       .quote-block p { font-size: 1.2rem; }
       footer { padding: 40px 16px 20px; }
     }
+
+    .creator-gallery { position: relative; margin: 32px 0; overflow: hidden; border-radius: var(--radius); }
+    .gallery-track { display: flex; transition: transform 0.4s ease; }
+    .gallery-slide { min-width: 100%; }
+    .gallery-slide img { width: 100%; height: 460px; object-fit: cover; border-radius: var(--radius); display: block; }
+    .gallery-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.92); border: none; border-radius: 50%; width: 44px; height: 44px; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 12px rgba(0,0,0,0.15); transition: background 0.2s; z-index: 10; }
+    .gallery-nav:hover { background: white; }
+    .gallery-prev { left: 14px; }
+    .gallery-next { right: 14px; }
+    .gallery-dots { display: flex; justify-content: center; gap: 8px; padding: 14px 0 4px; }
+    .gallery-dot { width: 8px; height: 8px; border-radius: 50%; background: #ccc; cursor: pointer; transition: background 0.2s; border: none; padding: 0; }
+    .gallery-dot.active { background: var(--blue); }
+    @media (max-width: 768px) { .gallery-slide img { height: 280px; } }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Why We Film Every Family Trip on YouTube (And Why You Should Too)",
+    "description": "How documenting every family trip on YouTube changed the way the Robersons experience theme parks and travel — and why capturing your own family story matters more than you think.",
+    "author": { "@type": "Person", "name": "Jordan & Ashly Roberson", "url": "https://meettherobersons.com" },
+    "publisher": { "@type": "Organization", "name": "Meet The Robersons", "url": "https://meettherobersons.com" },
+    "datePublished": "2026-06-10",
+    "dateModified": "2026-06-25",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://meettherobersons.com/blog-why-we-document.html" },
+    "image": "https://meettherobersons.com/kid-birthday.jpg",
+    "keywords": "family travel vlog, documenting family memories, family YouTube channel, family content creator, Orlando family travel"
+  }
+  </script>
 </head>
 <body>
 
@@ -123,68 +170,105 @@
     <div class="blog-hero-overlay">
       <div class="blog-hero-category">Our Story</div>
       <h1 class="blog-hero-title">Why We Document Everything (And Why You Should Too)</h1>
-      <div class="blog-hero-meta">June 10, 2026 &nbsp;&middot;&nbsp; 6 min read &nbsp;&middot;&nbsp; By Jordan & Ashly Roberson</div>
+      <div class="blog-hero-meta">June 10, 2026 &nbsp;&middot;&nbsp; 6 min read &nbsp;&middot;&nbsp; By Jordan Roberson</div>
     </div>
   </div>
 
   <div class="blog-container">
     <a href="index.html#blog" class="back-link">&#8592; Back to Blog</a>
 
-    <p class="blog-intro">When we first started filming our family trips, it honestly felt a little awkward. Who wants a camera in their face at 7am waiting for a theme park to open? But two years and 99 videos later, the camera has become the best thing we ever added to our family adventures. Here is why we will never stop.</p>
+    <p class="blog-intro">I have been filming our family since before we even had a reason to. Long before YouTube. Long before any plan. I just always knew these moments were worth capturing. We had four hard drives full of footage before we ever posted a single video. This is the story of how that turned into something real, and why we will never stop.</p>
 
     <div class="blog-body">
 
-      <h2>It Started as Something Small</h2>
-      <p>We did not launch a YouTube channel with some big master plan. Jordan picked up a camera one morning before a trip to Universal Orlando and just started filming. The kids were acting exactly the way kids act. Chaotic, hilarious, full of way too much energy before 8am. And when we watched the footage back that night at the hotel, something clicked.</p>
-      <p>That 20 minutes of footage captured something no photo could. The jokes that only make sense in our family. The inside references. The way our youngest squealed when she saw the Hogwarts castle for the first time. The way our teenagers pretended to be too cool and then absolutely lost it on the roller coaster. It was a real snapshot of who we actually are as a family, not a posed highlight reel.</p>
+      <img src="blog-doc-family-christmas.jpg" class="blog-img" alt="The Roberson family in matching red buffalo plaid pajamas together at Christmas before the YouTube channel existed">
+
+      <h2>It Started Long Before the Channel Did</h2>
+      <p>The vision really came into focus in 2020. I had always captured moments the way any parent does, but something shifted around that time. Something more intentional. A real way to document our family, tell our story, and share what we were actually experiencing. We shot some things around the house just to get started. But the spark that truly lit everything up came in 2022 when our whole family packed up and moved to South Carolina for about five months.</p>
+      <p>Those months away from Florida were transformative. Ashly and I were watching a ton of theme park content on YouTube, and The Frugal Brit was always on. That channel is actually how we discovered the Disney Boardwalk for the first time. We had lived in Florida for years and somehow never really explored it. Watching that video, we both thought, wait, this place is incredible. A whole little world right on the water, like a mini Disney Springs but with a completely different feel. We were discovering our own backyard through someone else's lens and it fired us up. That is exactly what great content does. It makes you want to go experience something yourself!</p>
+      <p>When we came back to Florida to visit, I brought the camera. Something happened at Universal that I did not expect. People kept stopping us. Not because of how many kids we had, but because we had four at the time, a newborn in tow, and our Wonderfold Wagon rolling through the park. People were genuinely drawn to us, stopping to say how incredible it was to see a big family just out there doing it. That is when I turned to Ashly and said, I think we have something here. The kids are naturally happy. They love these parks. We are already capturing this anyway. Why not turn it into a channel? That is exactly where Meet The Robersons was born.</p>
 
       <div class="section-divider"></div>
 
-      <h2>The Memory Problem Is Real</h2>
-      <p>Here is something nobody talks about enough: memory is unreliable. Even the best moments fade faster than you think. You will swear you will never forget the look on your kid's face at a certain moment. And then a few years go by and the details start to blur. The feeling stays. The specifics go.</p>
-      <p>Video changes that. When we look back at footage from two years ago, it is like stepping back into those exact moments. We remember conversations we would have completely forgotten. We see how little the kids were. We notice things we missed in real time because we were focused on logistics or keeping everyone together.</p>
+      <img src="blog-doc-epcot-joy.jpg" class="blog-img" alt="A Roberson daughter smiling joyfully at EPCOT Flower and Garden Festival">
+
+      <h2>Then I Found the Pugh Two and Everything Changed</h2>
+      <p>Deep in that South Carolina content rabbit hole, I stumbled across some incredibly cinematic Chuck E. Cheese videos. Drone shots, real production value, genuine storytelling at a Chuck E. Cheese. Something cracked open in my brain. The ceiling for this kind of content was way higher than I had imagined.</p>
+      <p>Then I found <a href="https://www.youtube.com/@ThePughTwo" target="_blank" rel="noopener">the Pugh Two</a> and everything shifted. Universal has been part of my life for as long as I can remember. YouTube too. My very first video ever posted was of Hollywood Rip Ride Rockit at Universal Orlando back in 2007. The fire was always there. But watching what Tyler was doing at Universal, breaking through the typical vlog format and making it look genuinely cinematic at a park where that style had never really been done, that was it. He became my creative north star.</p>
+      <p>The Pugh Two commented on our second video ever posted. Our SECOND video! That moment alone is ninety percent of the reason we decided to fully commit to this channel. A few months later we packed up and moved back to Florida to go all in. Tyler has been like a big brother to me from the start, pushing me as a videographer and helping us level up faster than we ever would have on our own. We would not be here without him and the Pugh Two, and we will say that every single chance we get.</p>
+
+      <div class="section-divider"></div>
+
+      <img src="blog-doc-ashly-baby-castle.jpg" class="blog-img" alt="Ashly Roberson kissing a newborn baby in front of Cinderella Castle at Magic Kingdom Walt Disney World">
+
+      <h2>Photos Are Great. But Videos Put You Right Back There.</h2>
+      <p>People ask what moment from our early footage made us know we had to keep going. Honestly, it was never one single thing. I have always filmed candidly. Roll the camera, let life happen, no posing, no performing. Just real life. And that is exactly what makes going back and watching old footage so powerful.</p>
+      <p>A photo freezes a moment. A video puts you back inside it. When we watch footage from even a year ago, we are not just seeing what happened. We are hearing the voices, feeling the energy, right back in the middle of that day in a way a photo simply cannot replicate. Song selection is where I spend the most time on every edit. Hours sometimes. Because the right song does not just play behind a video. It captures the emotional temperature of that day. It is what makes you actually feel something when you watch it back months later. We are literally our own favorite YouTube channel. The kids go absolutely crazy every time a new video drops.</p>
 
       <div class="quote-block">
-        <p>"Our kids are going to have a library of their childhood that they can revisit forever. That is something we are genuinely proud of."</p>
+        <p>"A photo freezes a moment. A video puts you right back inside it. That is why I film everything."</p>
         <span>Jordan Roberson</span>
       </div>
 
-      <h2>It Has Changed How We Show Up on Trips</h2>
-      <p>This one surprised us. We assumed that having a camera around would make trips feel more performative or stressful. The opposite happened. When you know you are documenting something, you naturally pay more attention. You notice the little moments more. You are more present because you are actively looking for things worth capturing.</p>
-      <p>Our kids have gotten in on it too. They remind us to film things. They get excited about the recap videos. Our oldest has started thinking about storytelling in a way that genuinely impresses us. Documenting has made the whole family more engaged with the experiences we are having, not less.</p>
+      <img src="blog-doc-jordan-baby-castle.jpg" class="blog-img" alt="Jordan Roberson holding his newborn baby in front of Cinderella Castle at Magic Kingdom Walt Disney World">
+
+      <h2>Dad First. Camera Second. Always.</h2>
+      <p>I want to be clear about something. We do not consider ourselves influencers. That word implies the camera is driving your decisions, and for us it is always the opposite. If the kids are not getting what they need, if I can feel the day shifting from family time toward content, the camera goes away. Full stop. We go through long stretches without uploading because being present parents comes first, and we are completely at peace with that.</p>
+      <p>When we first started, Ashly was not a camera person at all. Most people are not! But because it never felt performative, because it was always just about capturing real life, it eventually stopped feeling weird for her. Our kids genuinely do not notice the camera anymore because it never interrupts their day. Filming one handed while holding a baby with the other arm is basically a skill at this point, because that is just what theme park parenting actually looks like. We are a family first. The channel exists because of that, not in spite of it.</p>
 
       <div class="tip-box">
-        <div class="tip-label">If You Are Just Starting Out</div>
-        <p>You do not need fancy equipment to start. A phone on a small stabilizer tripod is how we started and honestly it is still most of what we use. The best camera is the one you actually have with you and are willing to pull out. Start there and build from it.</p>
+        <div class="tip-label">On Filming With Little Ones</div>
+        <p>The Wonderfold Wagon was honestly what made filming possible in our early days. <a href="https://www.universalorlando.com/" target="_blank" rel="noopener">Universal Orlando</a> openly allows them in the parks, which is a huge part of why our early content leaned so heavily Universal. At Disney, we now have a stroller pass due to one of our children having special needs, and that has been a total game changer. If you have multiple little kids and want to start documenting, handle your logistics first. The content will absolutely follow.</p>
       </div>
 
       <div class="section-divider"></div>
 
-      <h2>The Community We Never Expected</h2>
-      <p>When we posted our first videos, we genuinely had no idea if anyone would watch them. We were just a family in Orlando going to theme parks with six kids. Not exactly a novel concept.</p>
-      <p>But something about the realness of it connected with people. Parents who were planning their first Universal trip. Families who saw a reflection of their own chaos in ours. People who just wanted to watch something joyful for a few minutes. The community that formed around our channel has been one of the most genuinely unexpected gifts of this whole journey.</p>
-      <p>We hear from families all the time who say our videos helped them plan their trip. Or that watching us gave them the confidence to take their own big family to a theme park for the first time. Or just that seeing our crew made them smile on a hard day. That feedback is not something we expected when Jordan picked up a camera before a Universal trip. But it is something we take seriously now.</p>
+      <h2>The Community That Showed Up</h2>
+      <p>Honestly, we had no idea if anyone would watch. Just a family from Orlando, going to theme parks with a camera. But people found us, and the people who found us have meant everything.</p>
+      <p>Viewers like Metallic Knoll showed up early and stayed consistent, which means more when you are just getting started than most people realize. Kevin Heimbach and Kyle Pallo both gave me advice early that I still carry today. And <a href="https://www.youtube.com/channel/UCCE7kTsZ1icykc8hazTRNjg" target="_blank" rel="noopener">Kristen from Wright Down Main Street</a> was one of our first hundred subscribers and has supported this channel from day one. She is one of the warmest people in this entire space and we love her and her whole crew.</p>
+      <p>Then there was Adam the Woo. I have been watching him since middle school. Early on, while filming the opening of Moana Journey of Water at EPCOT, I ran into him. I told him what his channel had meant to me growing up. He was warm, genuine, completely present in that conversation. He put us in his video, gave us a shoutout on Instagram, and we gained over a hundred subscribers overnight from that one moment. When you are grinding with almost no audience and someone with a real platform does not have to do anything for you but does it anyway, that is something you never forget. Grateful for Adam every time I think about that day.</p>
+      <p>The theme park creator space is more collaborative than I ever expected. Competition exists, sure. But the people who have poured into this channel have given us far more than we could have hoped for, and we try to pay that forward every chance we get.</p>
 
-      <h3>Your Story Is Worth Telling</h3>
-      <p>We talk to a lot of families who have thought about documenting but talked themselves out of it. They assume their family is too ordinary. That nobody wants to watch a normal family going on normal trips. We used to feel the same way.</p>
-      <p>But here is what we know now: people do not watch family content looking for perfection. They are looking for connection. For authenticity. For proof that other families are figuring it out in real time just like they are. Your ordinary is someone else's inspiration. Your chaotic morning at the theme park gates might be exactly what some family needs to see before they decide to finally book their trip.</p>
+      <div class="creator-gallery">
+        <div class="gallery-track" id="creatorGalleryTrack">
+          <div class="gallery-slide"><img src="blog-doc-wonderfold-epcot.jpg" alt="The Roberson family at EPCOT Flower and Garden Festival with the Wonderfold Wagon alongside a fellow creator"></div>
+          <div class="gallery-slide"><img src="blog-doc-kristen-creators.jpg" alt="Jordan Roberson with camera gear alongside Kristen from Wright Down Main Street and other creators at Universal Orlando"></div>
+          <div class="gallery-slide"><img src="blog-doc-adam-the-woo.jpg" alt="The Roberson kids with Adam the Woo at EPCOT Flower and Garden Festival"></div>
+          <div class="gallery-slide"><img src="blog-doc-universal-creators.jpg" alt="Jordan Roberson with fellow theme park content creators at Universal Studios Florida Tribute Store Plaza"></div>
+        </div>
+        <button class="gallery-nav gallery-prev" aria-label="Previous photo">&#8592;</button>
+        <button class="gallery-nav gallery-next" aria-label="Next photo">&#8594;</button>
+        <div class="gallery-dots">
+          <button class="gallery-dot active" data-index="0"></button>
+          <button class="gallery-dot" data-index="1"></button>
+          <button class="gallery-dot" data-index="2"></button>
+          <button class="gallery-dot" data-index="3"></button>
+        </div>
+      </div>
 
       <div class="section-divider"></div>
 
-      <h2>Beyond the Videos: Why the Record Matters</h2>
-      <p>We think about this a lot. Our six kids are growing up fast. Every single one of them is in a phase that will never come back. The toddler stage. The age when they are obsessed with a specific character. The age when they are trying to act like teenagers but still cannot fully hide how excited they are about a new ride.</p>
-      <p>We are building a record of this family at every stage. Not a curated, perfect version of us. The real version. Tired and excited and silly and sometimes frustrated and always, always loving each other through it. That record is going to matter enormously someday. For our kids. For their kids. For us.</p>
-      <p>That is why we document everything. Not for views. Not for brand deals. Because this family is worth remembering in full detail and we want to be the ones doing the remembering.</p>
+      <h2>The Best Advice I Ever Got</h2>
+      <p>The theme park content space is saturated. There are a lot of people doing what we do, especially on the Disney side. When you first start out, you obsess over the analytics. You refresh the dashboard. You spend 40 hours on a video and it gets 200 views, then throw something together and it gets 2,000. It will absolutely drive you crazy if you let it.</p>
+      <p>Kevin Heimbach told me early on: do not look at the analytics. Just keep uploading. That is the whole advice. You cannot control the algorithm. You cannot force a video to go viral. What you can control is showing up, putting out work, and giving the platform more chances to put your content in front of people. More videos means more at bats, and eventually one connects! We put out one to two videos a month and know that more consistency would help us grow faster. But every single video we put out, we stand behind completely. That is what keeps us going.</p>
 
       <div class="section-divider"></div>
 
-      <h2>Where to Start If You Want to Do the Same</h2>
-      <p>Pick up whatever camera you have. Film one trip. Do not worry about editing or lighting or whether the footage is perfect. Just get the moments. Watch it back with your family that night and notice what happens to the room. We promise that will tell you everything you need to know about whether to keep going.</p>
-      <p>And if you want a shortcut, just watch what we do. Not because our way is the only way. But because we have figured out a lot through trial and error and there is no reason you have to make the same mistakes we did. That is what this whole channel is built on. Sharing what we know so your family can have the best possible version of these experiences.</p>
+      <img src="blog-doc-girls-golden-hour.jpg" class="blog-img" alt="Three Roberson daughters laughing together at golden hour at Disney Springs">
+
+      <h2>What We Are Actually Building</h2>
+      <p>At the core of all of this is a legacy project. That is truly what this is. We are recording our children growing up, documenting what it looks like to be this family, right now, doing the things we love together. When our kids are grown and start families of their own, they are going to have this entire library of themselves as children. They will see how happy they were. How loved they were. What this season of life actually looked like. You cannot recreate that. You either captured it or you did not.</p>
+      <p>But beyond the legacy, there are families we have not met yet that this channel is for. Over forty percent of theme park attendance at Disney World is adults without children. We never want a family to feel like these parks are not for them. We want to reach the parent who thinks they cannot afford it, or does not know how to navigate Magic Kingdom with three kids under five. We want to partner with companies that can help make those experiences possible for families who otherwise would not have them. Becoming a parent does not mean your sense of adventure disappears. Life should not slow down when your children are born. It should just change shape.</p>
+      <p>That is what Meet The Robersons is all about. It is the memories, yes. But it is also the message. Come on in. Bring your kids. There is absolutely room for all of us out here.</p>
+
+      <div class="tip-box" style="border-left-color: var(--blue); background: linear-gradient(135deg,#e1f4fc,#efeee8);">
+        <div class="tip-label" style="color:#1a8cb8;">Also on the blog</div>
+        <p>Ready to plan your own Universal trip? Start with our <a href="blog-universal-guide.html">complete Universal Orlando guide for families</a>, and check out how we <a href="blog-family-travel-budget.html">budget Universal and Disney World for a family of 8</a>.</p>
+      </div>
 
       <div class="blog-cta">
         <h3>Come watch us do it live</h3>
-        <p>99 videos, 8 family members, and zero plans to stop any time soon. Subscribe and come along for the ride.</p>
+        <p>100+ videos, 8 family members, and zero plans to stop any time soon. Subscribe and come along for the ride.</p>
         <a href="https://www.youtube.com/@TheRobersonsTravel" target="_blank" class="btn btn-primary">Subscribe on YouTube &#8594;</a>
       </div>
 
@@ -201,5 +285,23 @@
     <div class="footer-bottom">&#169; 2026 Meet The Robersons. All rights reserved.</div>
   </footer>
 
+
+  <script>
+    (function() {
+      var track = document.getElementById('creatorGalleryTrack');
+      if (!track) return;
+      var slides = track.querySelectorAll('.gallery-slide');
+      var dots = document.querySelectorAll('.gallery-dot');
+      var current = 0;
+      function goTo(n) {
+        current = (n + slides.length) % slides.length;
+        track.style.transform = 'translateX(-' + current * 100 + '%)';
+        dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+      }
+      document.querySelector('.gallery-prev').addEventListener('click', function() { goTo(current - 1); });
+      document.querySelector('.gallery-next').addEventListener('click', function() { goTo(current + 1); });
+      dots.forEach(function(d) { d.addEventListener('click', function() { goTo(parseInt(d.dataset.index)); }); });
+    })();
+  </script>
 </body>
 </html>
