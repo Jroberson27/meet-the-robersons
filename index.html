@@ -943,7 +943,48 @@
       opacity: 1;
       transform: translateY(0);
     }
-  </style>
+  
+  /* ─── HERO VIDEO + SCROLL ANIMATION ──────────────────── */
+  .hero-scroll-zone {
+    height: 175vh;
+    position: relative;
+  }
+  .hero {
+    position: sticky !important;
+    top: 0 !important;
+    height: 100vh !important;
+    overflow: hidden;
+  }
+  .hero-video-wrap {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+    background: #000;
+  }
+  .hero-video-wrap iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 56.25vw;
+    min-height: 100vh;
+    min-width: 177.78vh;
+    transform: translate(-50%, -50%);
+    border: none;
+  }
+  .stats-pull {
+    position: absolute !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(100%);
+    z-index: 10;
+    will-change: transform;
+  }
+
+</style>
 </head>
 <body>
 
@@ -975,53 +1016,60 @@
   </div>
 
   <!-- ═══ HERO ══════════════════════════════════════════ -->
-  <section class="hero" id="home">
-    <div class="hero-bg" id="heroBg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-badge">🎢 Orlando Locals · Universal Orlando · Disney World · Epic Universe</div>
-      <h1 class="hero-title">
-        <span class="meet">MEET</span>
-        <span class="the">THE</span>
-        <span class="robersons">ROBERSONS</span>
-      </h1>
-      <p class="hero-tagline">
-        Your family's guide to <strong>Universal Orlando</strong>, <strong>Disney World</strong> &amp; beyond. Straight from an Orlando family of 8.
-      </p>
-      <div class="hero-buttons">
-        <button onclick="openVideo()" class="btn btn-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          Watch Our Latest
-        </button>
-        <a href="#contact" class="btn btn-secondary">
-          Work With Us →
-        </a>
+  <!-- ═══ HERO SCROLL ZONE ════════════════════════════════ -->
+  <div class="hero-scroll-zone" id="heroScrollZone">
+    <section class="hero" id="home">
+      <div class="hero-video-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/ZCRQOkxuN-4?autoplay=1&mute=1&loop=1&playlist=ZCRQOkxuN-4&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          title="Meet The Robersons"
+        ></iframe>
       </div>
-    </div>
-    <div class="hero-scroll">
-      <span>Scroll</span>
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-    </div>
-  </section>
-
-  <!-- ═══ STATS BAR ══════════════════════════════════════ -->
-  <div class="stats-bar">
-    <div class="stats-inner">
-      <div class="stat">
-        <div class="stat-number" style="color: var(--pink);">6,380</div>
-        <div class="stat-label">Total Followers</div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-badge">🎢 Orlando Locals · Universal Orlando · Disney World · Epic Universe</div>
+        <h1 class="hero-title">
+          <span class="meet">MEET</span>
+          <span class="the">THE</span>
+          <span class="robersons">ROBERSONS</span>
+        </h1>
+        <p class="hero-tagline">
+          Your family's guide to <strong>Universal Orlando</strong>, <strong>Disney World</strong> &amp; beyond. Straight from an Orlando family of 8.
+        </p>
+        <div class="hero-buttons">
+          <button onclick="openVideo()" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Watch Our Latest
+          </button>
+          <a href="#contact" class="btn btn-secondary">Work With Us →</a>
+        </div>
       </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <div class="stat-number" style="color: var(--blue);">4M+</div>
-        <div class="stat-label">Total Views</div>
+      <div class="stats-bar stats-pull" id="statsPull">
+        <div class="stats-inner">
+          <div class="stat">
+            <div class="stat-number" style="color: var(--pink);">6,380</div>
+            <div class="stat-label">Total Followers</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <div class="stat-number" style="color: var(--blue);">4M+</div>
+            <div class="stat-label">Total Views</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <div class="stat-number" style="color: var(--yellow);">100+</div>
+            <div class="stat-label">Videos Published</div>
+          </div>
+        </div>
       </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <div class="stat-number" style="color: var(--yellow);">100+</div>
-        <div class="stat-label">Videos Published</div>
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
       </div>
-    </div>
+    </section>
   </div>
 
   <!-- ═══ ABOUT ══════════════════════════════════════════ -->
@@ -1546,6 +1594,28 @@
         e.target.reset();
       }, 3000);
     }
+  </script>
+
+  <script>
+    // Hero scroll-driven stats pull-in
+    (function () {
+      function updateHeroScroll() {
+        var zone = document.getElementById('heroScrollZone');
+        var stats = document.getElementById('statsPull');
+        var indicator = document.querySelector('.scroll-indicator');
+        if (!zone || !stats) return;
+        var scrolled = window.scrollY;
+        var zoneTop = zone.offsetTop;
+        var zoneExtra = zone.offsetHeight - window.innerHeight;
+        if (zoneExtra <= 0) return;
+        var progress = Math.max(0, Math.min(1, (scrolled - zoneTop) / zoneExtra));
+        stats.style.transform = 'translateY(' + ((1 - progress) * 100) + '%)';
+        if (indicator) indicator.style.opacity = Math.max(0, 1 - progress * 4);
+      }
+      window.addEventListener('scroll', updateHeroScroll, { passive: true });
+      window.addEventListener('resize', updateHeroScroll);
+      updateHeroScroll();
+    })();
   </script>
 </body>
 </html>
