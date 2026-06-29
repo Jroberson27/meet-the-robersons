@@ -984,6 +984,16 @@
     will-change: transform;
   }
 
+
+  /* Desktop: video bg, hide static image */
+  @media (min-width: 769px) {
+    .hero-bg { display: none !important; }
+  }
+  /* Mobile: hide video, show static image */
+  @media (max-width: 768px) {
+    .hero-video-wrap { display: none !important; }
+    .hero-bg { display: block !important; }
+  }
 </style>
 </head>
 <body>
@@ -1019,6 +1029,15 @@
   <!-- ═══ HERO SCROLL ZONE ════════════════════════════════ -->
   <div class="hero-scroll-zone" id="heroScrollZone">
     <section class="hero" id="home">
+      <div class="hero-video-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/ZCRQOkxuN-4?autoplay=1&mute=1&loop=1&playlist=ZCRQOkxuN-4&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          title="Meet The Robersons"
+        ></iframe>
+      </div>
       <div class="hero-bg" id="heroBg"></div>
       <div class="hero-overlay"></div>
       <div class="hero-content">
