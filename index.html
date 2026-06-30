@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -544,7 +545,7 @@
     .blog { background: var(--off-white); }
     .blog-grid {
       display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 24px;
       margin-top: 48px;
     }
@@ -561,13 +562,11 @@
       transform: translateY(-4px);
       box-shadow: 0 12px 32px rgba(0,0,0,0.1);
     }
-    .blog-card.featured { grid-row: span 2; }
     .blog-thumb {
       aspect-ratio: 16/9;
       background: linear-gradient(135deg, #f8e1ef, #e1f4fc);
       overflow: hidden;
     }
-    .blog-card.featured .blog-thumb { aspect-ratio: 4/3; }
     .blog-thumb-placeholder {
       width: 100%;
       height: 100%;
@@ -592,7 +591,6 @@
       margin-bottom: 10px;
       flex: 1;
     }
-    .blog-card.featured .blog-title { font-size: 1.3rem; }
     .blog-excerpt {
       font-size: 0.88rem;
       color: var(--muted);
@@ -900,7 +898,6 @@
       .about-accent, .about-accent-2 { display: none; }
       .video-grid { grid-template-columns: 1fr 1fr; }
       .blog-grid { grid-template-columns: 1fr; }
-      .blog-card.featured { grid-row: auto; }
       .partner-features { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
       .stat-divider { display: none; }
@@ -1200,10 +1197,10 @@
         <p class="section-sub">Universal Orlando crowd calendars, Disney World budget breakdowns, Epic Universe guides. Written by a family that goes every week, not once a year.</p>
       </div>
       <div class="blog-grid">
-        <!-- Featured -->
-        <div class="blog-card featured reveal">
-          <div class="blog-thumb" style="min-height: 280px; overflow:hidden;">
-            <img src="epic-night.jpg" alt="Epic Universe at night" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        <!-- Post 1 -->
+        <div class="blog-card reveal">
+          <div class="blog-thumb" style="overflow:hidden;">
+            <img src="blog-universal-family-mario.jpg" alt="The Roberson family in Mario shirts at Universal Studios" style="width:100%;height:100%;object-fit:cover;display:block;" />
           </div>
           <div class="blog-body">
             <div class="blog-category" style="color: var(--pink);">Theme Parks</div>
@@ -1218,7 +1215,7 @@
         <!-- Post 2 -->
         <div class="blog-card reveal">
           <div class="blog-thumb" style="overflow:hidden;">
-            <img src="kids-fort-wilderness.jpg" alt="Roberson kids at Fort Wilderness" style="width:100%;height:100%;object-fit:cover;display:block;" />
+            <img src="blog-budget-dockside-family.webp" alt="Roberson kids at Fort Wilderness" style="width:100%;height:100%;object-fit:cover;display:block;" />
           </div>
           <div class="blog-body">
             <div class="blog-category" style="color: var(--blue);">Travel</div>
@@ -1233,7 +1230,7 @@
         <!-- Post 3 -->
         <div class="blog-card reveal">
           <div class="blog-thumb" style="overflow:hidden;">
-            <img src="DSC08250.jpg" alt="Birthday at Disney Fort Wilderness" style="width:100%;height:100%;object-fit:cover;display:block;" />
+            <img src="blog-doc-kids-jumping.webp" alt="Roberson kids at Disney" style="width:100%;height:100%;object-fit:cover;display:block;" />
           </div>
           <div class="blog-body">
             <div class="blog-category" style="color: var(--yellow); color: #9a7a00;">Family Life</div>
@@ -1242,6 +1239,21 @@
             <div class="blog-footer">
               <span>June 8, 2026 · 4 min</span>
               <a href="blog-why-we-document.html" class="read-more" style="color: #9a7a00;">Read →</a>
+            </div>
+          </div>
+        </div>
+        <!-- Post 4 -->
+        <div class="blog-card reveal">
+          <div class="blog-thumb" style="overflow:hidden;">
+            <img src="blog-oi-truro.jpg" alt="The Roberson family with Churro the Orlando Informer mascot at night" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          </div>
+          <div class="blog-body">
+            <div class="blog-category" style="color: var(--pink);">Theme Parks</div>
+            <div class="blog-title">Is the Orlando Informer Meetup Worth It for Families? Our Full Review, Plus Epic Universe</div>
+            <div class="blog-excerpt">We have been to the Orlando Informer Meetup three times. Here is our real take on the food value, Hagrid's wait times, character meet and greets, and whether it is worth the price for your family.</div>
+            <div class="blog-footer">
+              <span>June 30, 2026 · 10 min</span>
+              <a href="blog-orlando-informer-review.html" class="read-more" style="color: var(--pink);">Read →</a>
             </div>
           </div>
         </div>
