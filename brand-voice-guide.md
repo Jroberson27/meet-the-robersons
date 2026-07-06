@@ -14,8 +14,8 @@ Used sparingly and self aware. One or two per piece, always winked at, never sta
 ## Authority through casual specificity
 Concrete, specific details dropped conversationally do the credibility work that adjectives cannot. Examples: 7 million LEDs, 35 years at Universal, roses on the ironwork at Frankenstein's Manor, select nights August 28 through November 1. Prefer a specific number or detail over a vague superlative.
 
-## Headers as promises
-Section headers read like a thesis or a promise of what the reader will gain, not a flat label. Examples: "The Details Almost No One Notices Are the Ones That Matter Most," "You're Never Truly Alone at Universal Orlando." Directly transferable to MTR blog titles, section headers, and video thumbnails.
+## Headers stay short and keyword specific
+Keep h2 section titles short and keyword driven: "The Family Suite," "Bayliner Diner: Food and Dining," "The Pools." Save the feeling-first, promise style writing for the hook and the body copy under each header, not for the header text itself. Overwritten, clever headline copy reads as trying too hard and hurts scannability and SEO. This applies to MTR blog h2 titles specifically. It does not restrict the H1/page title, which can still be a hook style question or promise (e.g. "Is This Universal's Best Value Hotel for Families?").
 
 ## Rhythm and closers
 Mix short punchy sentences with longer flowing ones. Use rhetorical questions to pull the reader into the next paragraph, such as "Will you make it out of Hawkins?" Frame CTAs as invitations to join a community rather than commands.
